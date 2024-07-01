@@ -1,14 +1,12 @@
 ---
 layout: post
-title: "CTF : HTB Business CTF 2024: The Vault Of Hope  "
+title: "CTF : HTB Business CTF 2024: The Vault Of Hope"
 date: 2024-05-22
 categories: CTF
 background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
 title_color: "#ffffff"
 ---
 
-
-# CTF : HTB Business CTF 2024: The Vault Of Hope     
 **Url : https://ctf.hackthebox.com/event/details/htb-business-ctf-2024-the-vault-of-hope-1474**   
 **Challenge :  Say Cheese!**  
 **Date : flag le 22/05/2024 à 2h00**
