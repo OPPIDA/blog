@@ -1,0 +1,117 @@
+---
+layout: default
+refactor: true
+---
+
+{% include lang.html %}
+
+{% assign pinned = site.posts | where: 'pin', 'true' %}
+{% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+
+{% assign posts = '' | split: '' %}
+
+<!-- Get pinned posts -->
+
+{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign pinned_num = pinned.size | minus: offset %}
+
+{% if pinned_num > 0 %}
+  {% for i in (offset..pinned.size) limit: pinned_num %}
+    {% assign posts = posts | push: pinned[i] %}
+  {% endfor %}
+{% else %}
+  {% assign pinned_num = 0 %}
+{% endif %}
+
+<!-- Get default posts -->
+
+{% assign default_beg = offset | minus: pinned.size %}
+
+{% if default_beg < 0 %}
+  {% assign default_beg = 0 %}
+{% endif %}
+
+{% assign default_num = paginator.posts | size | minus: pinned_num %}
+{% assign default_end = default_beg | plus: default_num | minus: 1 %}
+
+{% if default_num > 0 %}
+  {% for i in (default_beg..default_end) %}
+    {% assign posts = posts | push: default[i] %}
+  {% endfor %}
+{% endif %}
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
+   {% for post in posts %}
+     <article class="card-wrapper card" style="background-image: url('{{ post.background_image }}'); background-size: cover; background-position: center; border-radius: 10px; position: relative; overflow: hidden;">
+       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse" style="background-color: rgba(0, 0, 0, 0.7); color: #fff; border-radius: 10px; text-decoration: none; position: relative; z-index: 1;">
+         {% assign card_body_col = '12' %}
+
+         {% if post.image %}
+           {% assign src = post.image.path | default: post.image %}
+           {% unless src contains '//' %}
+             {% assign src = post.media_subpath | append: '/' | append: src | replace: '//', '/' %}
+           {% endunless %}
+
+           {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+
+           {% assign lqip = null %}
+
+           {% if post.image.lqip %}
+             {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+           {% endif %}
+
+           <div class="col-md-5">
+             <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+           </div>
+
+           {% assign card_body_col = '7' %}
+         {% endif %}
+
+         <div class="col-md-{{ card_body_col }}">
+           <div class="card-body d-flex flex-column" style="color: #ffffff;">
+             <h1 class="card-title my-2 mt-md-0 title-white" style="font-weight: bold;">{{ post.title }}</h1>
+
+             <div class="card-text content mt-0 mb-3" style="color: #ffffff;">
+               <p>{% include post-description.html %}</p>
+             </div>
+
+             <div class="post-meta flex-grow-1 d-flex align-items-end" style="color: #ffffff;">
+               <div class="me-auto">
+                 <!-- posted date -->
+                 <i class="far fa-calendar fa-fw me-1"></i>
+                 <span style="color: #ffffff;">{% include datetime.html date=post.date lang=lang %}</span>
+
+                 <!-- categories -->
+                 {% if post.categories.size > 0 %}
+                   <i class="far fa-folder-open fa-fw me-1"></i>
+                   <span class="categories" style="color: #ffffff;">
+                     {% for category in post.categories %}
+                       {{ category }}
+                       {%- unless forloop.last -%},{%- endunless -%}
+                     {% endfor %}
+                   </span>
+                 {% endif %}
+               </div>
+
+               {% if post.pin %}
+                 <div class="pin ms-1" style="color: #ffffff;">
+                   <i class="fas fa-thumbtack fa-fw"></i>
+                   <span style="color: #ffffff;">{{ site.data.locales[lang].post.pin_prompt }}</span>
+                 </div>
+               {% endif %}
+             </div>
+             <!-- .post-meta -->
+           </div>
+           <!-- .card-body -->
+         </div>
+       </a>
+     </article>
+   {% endfor %}
+ </div>
+
+
+<!-- #post-list -->
+
+{% if paginator.total_pages > 1 %}
+  {% include post-paginator.html %}
+{% endif %}

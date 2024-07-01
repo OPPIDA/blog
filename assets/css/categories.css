@@ -1,0 +1,14 @@
+.card-header.d-flex.justify-content-between.hide-border-bottom {
+  padding: 10px; /* Ajoute du padding pour l'espacement */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Ajoute une transition pour un effet lisse */
+}
+
+.card-header.d-flex.justify-content-between.hide-border-bottom:hover {
+  background-color: green; /* Change le fond en vert lorsqu'on passe dessus */
+  color: white; /* Change la couleur du texte en blanc pour un meilleur contraste */
+}
+
+.card-header.d-flex.justify-content-between.hide-border-bottom:active {
+  background-color: darkgreen; /* Change le fond en vert foncé lorsqu'on clique dessus */
+  color: white; /* Change la couleur du texte en blanc pour un meilleur contraste */
+}

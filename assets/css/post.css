@@ -1,0 +1,25 @@
+  .btn-outline-primary {
+  color: #008000; /* Couleur du texte */
+  border-color: #008000; /* Couleur de la bordure */
+}
+
+.btn-outline-primary:hover {
+  background-color: #008000; /* Couleur de fond au survol */
+  color: white; /* Couleur du texte au survol */
+}
+.toc-link.node-name--H3:hover {
+  color: white;
+}
+  .btn.btn-outline-primary:focus,
+.btn.btn-outline-primary:active {
+  border-color: initial !important;
+}
+  .toc-link.node-name--H3.is-active-link:focus,
+.toc-link.node-name--H3.is-active-link:active {
+  color: inherit !important; /* Assure que la couleur reste inchangée */
+  border-color: inherit !important; /* Assure que la couleur de bordure reste inchangée si applicable */
+  /* Autres propriétés à réinitialiser si nécessaire */
+}
+.license-wrapper {
+  display: none;
+}
