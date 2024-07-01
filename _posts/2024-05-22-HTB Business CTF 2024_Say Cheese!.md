@@ -13,7 +13,9 @@ title_color: "#ffffff"
 **Challenge :  Say Cheese!**  
 **Date : flag le 22/05/2024 à 2h00**
 
-![image info](../assets/posts/1.png)
+![](../assets/posts/1.png)
+![](/assets/posts/1.png))
+
 
 Un script python 'client.py' nous est fournit : 
 ```python
