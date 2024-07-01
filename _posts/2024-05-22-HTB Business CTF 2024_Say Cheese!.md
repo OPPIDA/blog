@@ -7,7 +7,7 @@ background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
 title_color: "#ffffff"
 ---
 
-**Url : https://ctf.hackthebox.com/event/details/htb-business-ctf-2024-the-vault-of-hope-1474**   
+**Url : ![HackTheBox Business CTF 2024](https://ctf.hackthebox.com/event/details/htb-business-ctf-2024-the-vault-of-hope-1474)**  
 **Challenge :  Say Cheese!**  
 **Date : flag le 22/05/2024 à 2h00**
 
