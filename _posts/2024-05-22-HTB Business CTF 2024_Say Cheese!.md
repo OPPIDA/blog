@@ -86,7 +86,7 @@ Le résultat de cette commande est donc printé grace au ```print(jedec_id)```
 ![](/assets/posts/3.png)
 
 donc si nous exécutons notre script client.py pour requêter le JEDEC ID : 
-```
+```bash
 ┌──(plm㉿oppida)-[~/home/CTF/say_cheese]
 └─$ python client.py 
 [239, 64, 24]
@@ -197,7 +197,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 ```
 
 
-```
+```bash
 ┌──(plm㉿oppida)-[~/home/CTF/say_cheese/_dump.bin.extracted/]
 └─$ ls -la
 total 3277396
@@ -227,7 +227,7 @@ Affichage du flag dans le ```etc/init.d/rcS``` :
 ```
 
 Il y a également une ligne au dessus du flag une vidéo Youtube très interessante sur le backdoring de caméra IP :  
-```
+```bash
 ┌──(plm㉿oppida)-[~/home/CTF/say_cheese/_dump.bin.extracted/squashfs-root]
 └─$ cat etc/init.d/rcS | grep HTB -B 1
 # https://www.youtube.com/watch?v=hV8W4o-Mu2o
