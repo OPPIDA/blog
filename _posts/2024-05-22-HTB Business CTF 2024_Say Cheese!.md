@@ -3,7 +3,7 @@ layout: post
 title: "CTF : HTB Business CTF 2024: The Vault Of Hope"
 date: 2024-05-22
 categories: CTF
-by : Pierre_Adams
+by: Pierre_Adams
 background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
 title_color: "#ffffff"
 ---
