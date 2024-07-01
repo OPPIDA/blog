@@ -12,7 +12,7 @@ title_color: "#ffffff"
 **Challenge :  Say Cheese!**  
 **Date : flag le 22/05/2024 à 2h00**
 
-![image info](.img/1.png)
+![image info](../assets/posts/1.png)
 
 Un script python 'client.py' nous est fournit : 
 ```python
@@ -62,7 +62,7 @@ print(jedec_id)
 
 Cela semble à première vu être un programme coté client qui vient interagir et requêter une puce de mémoire flash, l'énoncé nous indique que c'est une flash SPI et plus précisément la W25Q128FV
 
-![](.img/2.png)
+![](../assets/posts/2.png)
 
 dont voici la datasheet : https://www.pjrc.com/teensy/W25Q128FV.pdf
 
@@ -82,7 +82,7 @@ La commande appelle la fonction exchange avec comme paramètres 0x9F et 3
 - 3 : paramètre qui indique le nombre d'octets à lire. 
 
 Le résultat de cette commande est donc printé grace au ```print(jedec_id)```
-![](.img/3.png)
+![](../assets/posts/3.png)
 
 donc si nous exécutons notre script client.py pour requêter le JEDEC ID : 
 ```
@@ -111,7 +111,7 @@ résultat :
 ```
 
 Lorsque nous passons ces bytes dans cyberchef.
-![](.img5.png)
+![](../assets/posts/5.png)
 nous devinons qu'il s'agit d'une image LZMA compressé 
 
 j'ai passé beaucoup de temps à essayer de lire des adresses mémoire afin de voir si le flag n'était stocké en claire quelque part, mais au bout de plusieurs heures, j'ai compris qu'il fallait extract l'entièreté du firmware. 
