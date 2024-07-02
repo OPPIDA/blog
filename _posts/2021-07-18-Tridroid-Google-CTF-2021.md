@@ -304,7 +304,7 @@ In the rest of this write-up we will only focus on the javascript code of the ex
 ### Finding vulnerabilities in libtridroid
 
 The libtridroid library implements the native `manageStack` function. We can find this function under the name `Java_com_google_ctf_pwn_tridroid_MainActivity_manageStack` in Ghidra. Here is the decompiled output after cleaning up :
-![](./images/main.png)
+![](/assets/posts/2021-07-18-Tridroid-Google-CTF-2021/main.png)
 Only the relevant part is shown here. We can see that this function can accept 4 commands :
 
 - push
@@ -320,7 +320,7 @@ Avant d'appeler la fonction `push_element`, les données à empiler sont copiée
 
 La fonction `push_element` est la suivante :
 
-![](./images/push.png)
+![](/assets/posts/2021-07-18-Tridroid-Google-CTF-2021/push.png)
 
 Elle alloue un buffer de 24 octets sur le tas. Les 16 premiers octets sont mis à zéro et les 16 premiers octets des données à empiler y sont copiés. Les 8 derniers octets sont utilisés pour stocker un pointeur vers le `stack_top`.
 
@@ -338,7 +338,7 @@ Cette fonction supprime simplement le premier élément de la liste :
 
 Cette fonction permet de modifier le contenu du premier élément de la liste :
 
-![](./images/modify.png)
+![](/assets/posts/2021-07-18-Tridroid-Google-CTF-2021/modify.png)
 
 Il y a deux vulnérabilités au sein de cette fonction.
 
@@ -412,7 +412,7 @@ password = xmlHttp.responseText;
 alert("password : "+password);
 ```
 
-![](images/alert_pwd.png)
+![](/assets/posts/2021-07-18-Tridroid-Google-CTF-2021/alert_pwd.png)
 
 Ca marche !
 Les alertes sont très visuelles, mais sont encombrantes car nous devons cliquer dessus pour les faire disparaître. C'est pourquoi nous avons décidé d'utiliser `console.log()` à partir de maintenant. Le résultat devrait apparaître dans la sortie logcat de chrome :
@@ -470,7 +470,7 @@ Cela donne :
 
 Nous pouvons abuser du fait que le `modify_element` n'ajoute pas un octet NULL à la fin de nos données pour divulguer le contenu de la pile.
 
-![](./images/modify.png)
+![](/assets/posts/2021-07-18-Tridroid-Google-CTF-2021/modify.png)
 
 Comme le buffer temporaire n'est pas écrasé par un zéro après avoir été alloué, nous avons accès au contenu de la pile.
 
@@ -610,7 +610,7 @@ Cela donne :
 
 Nous avons vu que pour appeler la fonction `invokeJavaMethod`, nous avons besoin d'un pointeur sur l'objet `JNIEnv` et d'un pointeur sur l'objet `This`. Nous pouvons trouver des références à ces deux objets au début de la fonction `Java_com_google_ctf_pwn_tridroid_MainActivity_manageStack` :
 
-![](./images/envthis.png)
+![](/assets/posts/2021-07-18-Tridroid-Google-CTF-2021/envthis.png)
 
 Nous voyons qu'ils sont stockés sur la pile à `RBP-0x60` et `RBP-0x68` respectivement (Ghidra ajoute 8 aux offsets de la pile car il commence à l'adresse de retour, IDA ne le fait pas).
 
