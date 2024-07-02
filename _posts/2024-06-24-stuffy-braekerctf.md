@@ -1,7 +1,7 @@
 ---
 layout: post
 author: BRO
-title: "Stuffy BraekerCTF"
+title: "Stuffy - BraekerCTF"
 date: 2024-06-24
 categories: CTF
 background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
