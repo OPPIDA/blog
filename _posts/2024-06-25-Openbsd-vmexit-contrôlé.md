@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Openbsd vmexit contrôlé"
+author: LBA
 date: 2024-06-25
 categories: Système
 background_image: assets/maxresdefault.jpg
@@ -225,7 +226,7 @@ Concernant la partie **POC**, elle sera décomposée en plusieurs sous-parties a
 
 #### Choix de la raison du vm-exit
 
-Le choix de la raison **CPUID** semble être la plus approprié à déclencher, car elle est relativement simple à mettre en place :*
+Le choix de la raison **CPUID** semble être la plus approprié à déclencher, car elle est relativement simple à mettre en place :
 
 ```c
 #include <sys/syslog.h>
