@@ -1,3 +1,14 @@
+---
+layout: post
+author: FPI
+title: "Pythia - Google CTF 2022"
+date: 2022-02-22
+categories: CTF
+background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
+title_color: "#ffffff"
+---
+
+
 Nous avons accès à un oracle de déchiffrement, mais l'algorithme utilisé est AES-GCM. L'oracle indique si le message est valide ou non. Les requêtes sont très limitées donc nous pouvons utiliser un oracle de partitionnement pour réduire le nombre de requêtes et récupérer les clés.
 
 ## Détails
