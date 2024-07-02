@@ -2,7 +2,7 @@
 layout: post
 author: FPI
 title: "Pythia - Google CTF 2021"
-date: 2021-07-17
+date: 2021-07-19
 categories: CTF
 background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
 title_color: "#ffffff"
