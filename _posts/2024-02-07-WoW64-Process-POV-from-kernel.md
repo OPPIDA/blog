@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "*WoW64 Process - POV from kernel"
-author: LBA
+author: LLE
 date: 2024-06-25
 categories: Système
 background_image: assets/maxresdefault.jpg
