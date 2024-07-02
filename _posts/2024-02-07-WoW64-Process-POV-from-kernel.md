@@ -1,15 +1,12 @@
 ---
 layout: post
-title: "*WoW64 Process - POV from kernel"
+title: "WoW64 Process - POV from kernel"
 author: LLE
 date: 2024-06-25
 categories: Système
 background_image: assets/maxresdefault.jpg
 title_color: "#ffffff"
 ---
-
-
-# **WoW64 Process - POV from kernel**
 
 
 Have you ever wondered how your 64-bit Windows system manages to run those old 32-bit applications seamlessly? The instructions aren't the same, the addresses, the page sections and many of 32-bit structures can't be directly accessed by a 64-bit process, which differentiates the two.
