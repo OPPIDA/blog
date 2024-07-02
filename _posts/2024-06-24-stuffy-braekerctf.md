@@ -9,20 +9,20 @@ title_color: "#ffffff"
 
 
 Commençons par lire le code qui nous est fourni. On peut voir directement une faille SQL.
-![](stuffy1.png)
+![](/assets/posts/Stuffy/stuffy1.png)
 Seulement, nous n'avons pas la main sur le username. Il est choisi à partir du fichier `usenames.txt` fourni qui est une liste de username aléatoires + 4 chars aléatoires.
-![](stuffy2.png)
+![](/assets/posts/Stuffy/stuffy2.png)
 
 La SQLi est donc pas la bonne piste.
 
 Parmis toutes les routes on peut apercevoir l'endpoint  `/give_flag`
-![](stuffy3.png)
+![](/assets/posts/Stuffy/stuffy3.png)
 Cette fonction update la valeur du "stuff" avec la valeur de flag pour un user à partir du moment ou la requête vient du serveur lui-même.
 On peut essayer de rajouter le Headers à la main mais ça ne marchera pas car c'est le proxy nginx qui modifie les headers.
 Il faudrait donc trouver une fonction qui fait une requête et la rediriger vers `/give_flag`.
 Ça tombe bien `/set_stuff` fait une requête vers `/update_profile_internal`.
 
-![](stuffy4.png)
+![](/assets/posts/Stuffy/stuffy4.png)
 Set_stuff récupère dans un premier temps notre username grâce aux cookies et vérifie que cet user existe bien.
 Il récupère ensuite la variable de stuff de la requête et vérifie que la longueur est inférieure à 200.
 Les variables special_type, special_val sont de la même façon récupérées puis nétoyées avec les fonction `security_filter`.
@@ -56,11 +56,11 @@ special_type=Content-Length&special_val=80&stuff=aaaaaab%0d%0a%0d%0aPOST /give_f
 
 Ici, special_type et special_val forment un header qui va renseigner la première requête (la fin de aaaaaab) = Content-length: 80.
 Comment trouve-t-on ce nombre ?
- ![](stuffy5.png)
+ ![](/assets/posts/Stuffy/stuffy5.png)
 Il suffit de trouver la taille de cette string.
-![](stuffy6.png)
+![](/assets/posts/Stuffy/stuffy6.png)
 Il suffit ensuite de créer la deuxième requête. Puis de rafraîchir la page et nous aurons le flag dans notre stuff.
-![](stuffy7.png)
+![](/assets/posts/Stuffy/stuffy7.png)
 
 
 Ici, special_type et special_val forment un header qui va renseigner la première requête (la fin de aaaaaab) = Content-length: 80. Comment trouve-t-on ce nombre ?
