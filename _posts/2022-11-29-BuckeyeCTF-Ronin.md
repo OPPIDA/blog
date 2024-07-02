@@ -4,7 +4,7 @@ author: ABE
 title: "Ronin - BuckeyeCTF"
 date: 2022-11-29
 categories: CTF
-background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
+background_image: assets/ronin.jpg
 title_color: "#ffffff"
 ---
 
