@@ -1,4 +1,12 @@
-
+---
+layout: post
+title: "*WoW64 Process - POV from kernel"
+author: LBA
+date: 2024-06-25
+categories: Système
+background_image: assets/maxresdefault.jpg
+title_color: "#ffffff"
+---
 
 
 # **WoW64 Process - POV from kernel**
