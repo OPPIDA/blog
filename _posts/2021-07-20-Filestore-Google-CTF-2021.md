@@ -4,7 +4,7 @@ author: FPI
 title: "Filestore - Google CTF 2021"
 date: 2021-07-20
 categories: CTF
-background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
+background_image: assets/datacenter.jpg
 title_color: "#ffffff"
 ---
 
