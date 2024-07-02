@@ -19,11 +19,11 @@ subsystem acts like a compatibility layer between the 32-bit app and the 64-bit 
 
 By creating a simple 32-bit application, the layer become visible due to three modules loaded into our process.
 
-![PH_1](images/ProcessHacker_Screen1.PNG)
+![PH_1](/assets/posts/2024-02-07-WoW64-Process-POV-from-kernel/ProcessHacker_Screen1.PNG)
 
 Here is a representation of a x64 Windows app and a WoW64 app.
 
-![Sciencedirect_1](images/sciencedirect_1.jpg)
+![Sciencedirect_1](/assets/posts/2024-02-07-WoW64-Process-POV-from-kernel/sciencedirect_1.jpg)
 *([This article](https://www.sciencedirect.com/science/article/pii/S1742287618300458) really helpend our research)*
 ## The Kernel problem
 
@@ -55,7 +55,7 @@ By doing this, we encounter the same problem as WinDbg
 *(WinDbg implements the debug of the WOW64 process; which is why we have two TEB)*.
 In our driver example, we currently only have access to the second TEB, which represents the WOW64 environment.
 We are debugging the emulator itself!
-![Windbg_1](images/WinDBG_Screen1.png)
+![Windbg_1](/assets/posts/2024-02-07-WoW64-Process-POV-from-kernel/WinDBG_Screen1.png)
 
 ## The Kernel solution
 
@@ -66,7 +66,7 @@ Resolving this kind of problem can indeed be quite painful. Many internal Window
 
 To get the context of a 32-bit process, instead of using the ``KTRAP_FRAME`` structure, the (emulated) registers by WoW64 are located in the provided image :
 
-![sciencedirect_2.jpg](images/sciencedirect_2.jpg)
+![sciencedirect_2.jpg](/assets/posts/2024-02-07-WoW64-Process-POV-from-kernel/sciencedirect_2.jpg)
 
 The **T**hread **L**ocal **S**torage Slot array is opaque and not documented; Although [some code](https://github.com/mic101/windows/blob/master/WRK-v1.2/public/internal/base/inc/wow64tls.h) can assist in understanding it , a significant portion of this array consists of NULL pointers.
 
