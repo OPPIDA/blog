@@ -1,4 +1,11 @@
-
+---
+layout: post
+title: "Ronin - BuckeyeCTF"
+date: 2024-05-22
+categories: CTF
+background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
+title_color: "#ffffff"
+---
 
 Ce challenge est une exploitation de binaire. L'objectif est de détourner 
 le flux d'exécution du programme pour obtenir un shell sur la machine distante et lire le flag.
