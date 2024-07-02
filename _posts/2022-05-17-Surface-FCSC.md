@@ -4,7 +4,7 @@ author: FPI
 title: "Surface - FCSC 2022"
 date: 2022-05-17
 categories: CTF
-background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
+background_image: assets/resolve.jpg
 title_color: "#ffffff"
 ---
 
