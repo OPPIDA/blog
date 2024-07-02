@@ -14,9 +14,9 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Oppida blog # the main title
+title:# the main title
 
-tagline: Mission de confiance # it will display as the sub-title
+tagline: "Des articles de pointe,des avis d'experts,des analyses et des retours d'éxpériences, ..."# it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Blog de Oppida 
