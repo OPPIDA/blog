@@ -1,3 +1,13 @@
+---
+layout: post
+author: [FPI, ABE]
+title: "Tridroid - Google CTF 2021"
+date: 2021-07-17
+categories: CTF
+background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
+title_color: "#ffffff"
+---
+
 Dans ce challenge, nous avons affaire à une application Android implémentant une Webview vulnérable aux XSS. 
 Cette dernière possède également une librairie native exposant des fonctionnalités vulnérables à des overflow (stack, heap etc.)
 Pour réaliser cet exploit, nous devons passer par la XSS pour appeler les fonctions vulnérables de la librairie native. 
