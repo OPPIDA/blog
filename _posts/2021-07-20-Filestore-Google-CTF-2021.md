@@ -1,7 +1,7 @@
 ---
 layout: post
 author: FPI
-title: "filestore - Google CTF 2021"
+title: "Filestore - Google CTF 2021"
 date: 2021-07-20
 categories: CTF
 background_image: assets/what_is_sql_injection_attack_4bdd2066d6.png
