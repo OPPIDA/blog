@@ -1,5 +1,6 @@
 ---
 layout: post
+author: plm
 title: "CTF : HTB Business CTF 2024: The Vault Of Hope"
 date: 2024-05-22
 categories: CTF
