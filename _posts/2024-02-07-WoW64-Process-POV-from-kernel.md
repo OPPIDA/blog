@@ -4,7 +4,7 @@ title: "WoW64 Process - POV from kernel"
 author: LLE
 date: 2024-06-25
 categories: Système
-background_image: assets/maxresdefault.jpg
+background_image: assets/kernel.jpg
 title_color: "#ffffff"
 ---
 
