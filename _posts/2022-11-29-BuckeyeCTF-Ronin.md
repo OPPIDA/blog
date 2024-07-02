@@ -1,6 +1,6 @@
 ---
 layout: post
-author: ABA
+author: ABE
 title: "Ronin - BuckeyeCTF"
 date: 2022-11-29
 categories: CTF
