@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title | default: "Titre par défaut" }}</title>
-</head>
-<body>
-  <h1>{{ page.title | default: "Titre par défaut" }}</h1>
-  <p>{{ content }}</p>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    {{ content }}
+  </body>
 </html>
