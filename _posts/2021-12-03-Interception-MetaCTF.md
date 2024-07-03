@@ -64,7 +64,7 @@ D'après la description du challenge, 192.168.0.1 (victime) envoie le flag à 19
 
 La topologie du réseau est décrite ci-dessous : 
 
-![](assets/2021-12-03-Interception-MetaCTF/topo1.png)
+![](/assets/posts/2021-12-03-Interception-MetaCTF/topo1.png)
 
 
 ### Résoudre le problème
@@ -195,7 +195,7 @@ Le problème est similaire à celui décrit ci-dessus mais, cette fois-ci, nous 
 
 La topologie du réseau est décrite ci-dessous : 
 
-![](/assets/2021-12-03-Interception-MetaCTF/topo2.png)
+![](/assets/posts/2021-12-03-Interception-MetaCTF/topo2.png)
 
 ### Résoudre le problème
 
@@ -277,7 +277,7 @@ En se connectant à la machine par SSH, il y a en fait trois réseaux différent
 
 La topologie du réseau est décrite ci-dessous :
 
-![](assets/2021-12-03-Interception-MetaCTF/topo3.png)
+![](/assets/posts/2021-12-03-Interception-MetaCTF/topo3.png)
 
 ### Résoudre le problème
 
@@ -285,11 +285,11 @@ Comme nous devions traiter avec différents réseaux, la méthode d'empoisonneme
 
 Lorsque la victime envoie le flag au serveur, le paquet emprunte la route ci-dessous (représentée en rouge) :
 
-![](assets/2021-12-03-Interception-MetaCTF/original_path.png)
+![](/assets/posts/2021-12-03-Interception-MetaCTF/original_path.png)
 
 L'idée est donc de forcer tout le trafic du réseau de la victime à passer par notre routeur. Le flag empruntera donc la route suivante :  
 
-![](assets/2021-12-03-Interception-MetaCTF/new_path.png)
+![](/assets/posts/2021-12-03-Interception-MetaCTF/new_path.png)
 
 Pour ce faire, nous devons compromettre notre propre routeur d'une manière ou d'une autre. Heureusement, les auteurs nous ont donné des informations d'identification dans un indice. Peut-être pourrions-nous les utiliser quelque part pour obtenir un accès.
 
@@ -419,7 +419,7 @@ Le protocole Open Shortest Path First (OSPF) est utilisé. Ce protocole détermi
 
 Par exemple, dans la configuration par défaut, le chemin le plus court est celui représenté en rouge. Il a un facteur "coût" de 8, au lieu de 13 pour le chemin alternatif : 
 
-![](./images/orig_poid.png)
+![](/assets/posts/2021-12-03-Interception-MetaCTF/orig_poid.png)
 
 Les modifications ne sont prises en compte qu'après rechargement du fichier de configuration. Pour cela, nous avons utilisé le client `birdc` existant :
 
@@ -477,7 +477,7 @@ Nous avons modifié les facteurs "coût" de manière à ce que leur somme soit i
 
 Le nouveau chemin le plus court devient alors le suivant :
 
-![](assets/2021-12-03-Interception-MetaCTF/new_poid.png)
+![](/assets/posts/2021-12-03-Interception-MetaCTF/new_poid.png)
 
 Comme le flag est envoyé via UDP, nous avons capturé tout le trafic passant par notre routeur :
 
