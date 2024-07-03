@@ -8,6 +8,8 @@ background_image: assets/Tridroid-Banner.jpg
 title_color: "#ffffff"
 ---
 
+# Interception I
+
 Dans ce challenge, l'objectif est de réaliser une attaque de type Man In The Middle (MiTM) sur un réseau local afin de capturer le trafic UDP.
 
 ## Détails
@@ -62,7 +64,7 @@ D'après la description du challenge, 192.168.0.1 (victime) envoie le flag à 19
 
 La topologie du réseau est décrite ci-dessous : 
 
-![](images/topo1.png)
+![](/assets/2021-12-03-Interception-MetaCTF/topo1.png)
 
 
 ### Résoudre le problème
@@ -171,8 +173,6 @@ Flag : **MetaCTF{addr3s5_r3s0lut1on_pwn4g3}**
 
 # Interception II
 
-Par : ABE + FPI
-
 Dans ce challenge, l'objectif est de réaliser une attaque de type Man In The Middle (MiTM) sur un réseau local afin de capturer le trafic TCP sans connaitre les adresses IP des machines cibles.
 
 ## Details
@@ -277,7 +277,7 @@ En se connectant à la machine par SSH, il y a en fait trois réseaux différent
 
 La topologie du réseau est décrite ci-dessous :
 
-![](./images/topo3.png)
+![](assets/2021-12-03-Interception-MetaCTF/topo3.png)
 
 ### Résoudre le problème
 
@@ -285,11 +285,11 @@ Comme nous devions traiter avec différents réseaux, la méthode d'empoisonneme
 
 Lorsque la victime envoie le flag au serveur, le paquet emprunte la route ci-dessous (représentée en rouge) :
 
-![](./images/original_path.png)
+![](assets/2021-12-03-Interception-MetaCTF/original_path.png)
 
 L'idée est donc de forcer tout le trafic du réseau de la victime à passer par notre routeur. Le flag empruntera donc la route suivante :  
 
-![](./images/new_path.png)
+![](assets/2021-12-03-Interception-MetaCTF/new_path.png)
 
 Pour ce faire, nous devons compromettre notre propre routeur d'une manière ou d'une autre. Heureusement, les auteurs nous ont donné des informations d'identification dans un indice. Peut-être pourrions-nous les utiliser quelque part pour obtenir un accès.
 
@@ -477,7 +477,7 @@ Nous avons modifié les facteurs "coût" de manière à ce que leur somme soit i
 
 Le nouveau chemin le plus court devient alors le suivant :
 
-![](./images/new_poid.png)
+![](assets/2021-12-03-Interception-MetaCTF/new_poid.png)
 
 Comme le flag est envoyé via UDP, nous avons capturé tout le trafic passant par notre routeur :
 
