@@ -8,7 +8,7 @@ background_image: assets/Tridroid-Banner.jpg
 title_color: "#ffffff"
 ---
 
-# Interception I
+# Interception - Partie I
 
 Dans ce challenge, l'objectif est de réaliser une attaque de type Man In The Middle (MiTM) sur un réseau local afin de capturer le trafic UDP.
 
@@ -171,7 +171,7 @@ MetaCTF{addr3s5_r3s0lut1on_pwn4g3}
 
 Flag : **MetaCTF{addr3s5_r3s0lut1on_pwn4g3}**
 
-# Interception II
+# Interception - Partie II
 
 Dans ce challenge, l'objectif est de réaliser une attaque de type Man In The Middle (MiTM) sur un réseau local afin de capturer le trafic TCP sans connaitre les adresses IP des machines cibles.
 
