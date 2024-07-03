@@ -2,31 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <title>{{ page.title | default: "Titre par défaut" }}</title>
 </head>
 <body>
-  <header>
-    <h1>{{ site.title | default: "Titre du Site" }}</h1>
-    <nav>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        {% if site.tabs %}
-          {% for tab in site.tabs %}
-            <li><a href="{{ tab.url | relative_url }}">{{ tab.title | default: "Titre du Tab" }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-    </nav>
-  </header>
-  
-  <main>
-    {{ content }}
-  </main>
-
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title | default: "Titre du Site" }}. All rights reserved.</p>
-  </footer>
+  <h1>{{ page.title | default: "Titre par défaut" }}</h1>
+  <p>{{ content }}</p>
 </body>
 </html>
