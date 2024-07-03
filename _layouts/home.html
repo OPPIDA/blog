@@ -4,6 +4,34 @@ refactor: true
 ---
 
 {% include lang.html %}
+<style>
+  .category-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .category-link:hover,
+  .category-link:focus {
+    color: #0f0;
+    text-decoration: underline;
+  }
+
+  .category-link i {
+    margin-right: 8px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+
+</style>
 
 {% assign pinned = site.posts | where: 'pin', 'true' %}
 {% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
