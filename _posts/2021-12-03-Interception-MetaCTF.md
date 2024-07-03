@@ -64,7 +64,7 @@ D'après la description du challenge, 192.168.0.1 (victime) envoie le flag à 19
 
 La topologie du réseau est décrite ci-dessous : 
 
-![](/assets/2021-12-03-Interception-MetaCTF/topo1.png)
+![](assets/2021-12-03-Interception-MetaCTF/topo1.png)
 
 
 ### Résoudre le problème
@@ -195,7 +195,7 @@ Le problème est similaire à celui décrit ci-dessus mais, cette fois-ci, nous 
 
 La topologie du réseau est décrite ci-dessous : 
 
-![](images/topo2.png)
+![](/assets/2021-12-03-Interception-MetaCTF/topo2.png)
 
 ### Résoudre le problème
 
