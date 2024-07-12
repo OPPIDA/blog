@@ -16,7 +16,7 @@ timezone:
 
 title: # the main title
 
-tagline: "Des articles de pointe,des avis d'experts,des analyses et des retours d'éxpériences, ..."# it will display as the sub-title
+tagline: "Des articles de pointe,des avis d'experts,des analyses et des retours d'expériences, ..."# it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Blog de Oppida 
