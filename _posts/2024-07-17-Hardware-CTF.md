@@ -29,10 +29,10 @@ Repo Github : [CTF-Hardware](https://github.com/smarrazzo/CTF-Hardware)
 Plusieurs devices sont possible pour heberger ce challenge, mais pour cet article, les exerice ont été réalisé sur une ATmega32U4:  
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
 
-## 1 ere étape - Soudure  
+# Soudure  
 ![](assets/posts/2024-07-17-Hardware-CTF/2.png)
 
-## 2 eme Etape - Flash + Accès au menu
+# Flash + Accès au menu
 
 Flash :
 
@@ -50,7 +50,7 @@ L'accès au menu se fait par une connexion en serie sur le port USB de l'ATmega 
 ![](assets/posts/2024-07-17-Hardware-CTF/3.png)  
 ![](assets/posts/2024-07-17-Hardware-CTF/4.png)
 
-## Installation sur une breadbord : 
+# Installation sur une breadbord : 
 Une breadbord est composée de trous espacés de 2.54mm permettant d’enfoncer des composants afin de les relier ensemble sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
 
 Les trous qui appartiennent à une même ligne, sont reliés électriquement.
@@ -60,9 +60,9 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
 ![](assets/posts/2024-07-17-Hardware-CTF/7.png)
 
-## Exercices 
+# Exercices 
 
-### Exercice 1 :  Donne moi le flag !
+## Exercice 1 :  Donne moi le flag !
 
 En démarrant l'exercice 1, le flag est affiché à l'écran  
 ![](assets/posts/2024-07-17-Hardware-CTF/7.png)
@@ -71,7 +71,7 @@ En démarrant l'exercice 1, le flag est affiché à l'écran
 USB_S3Ri@l_1s_T0_3@sY
 ```
 
-### Exercice 2 :  Je crois que nous avons affaire à un serial killer!
+## Exercice 2 :  Je crois que nous avons affaire à un serial killer!
 
 ![](assets/posts/2024-07-17-Hardware-CTF/8.png)
 
@@ -105,7 +105,7 @@ Le flag apparait en ASSCI :
 The flag is : S3ri@L_1S_FuN!\r\n
 ```
 
-### Exercice 3 :  Mosi et Miso sont sur un bateau
+## Exercice 3 :  Mosi et Miso sont sur un bateau
 
 ![](assets/posts/2024-07-17-Hardware-CTF/16.png)
 
@@ -147,7 +147,7 @@ si nous copions donc l'entiéreté des data du flux :
 
 Nous n'avons malheureusement pas encore le mot de passe pour ouvrir cette archive :( 
 peut être dans un futur exercice... 
-### Exercice 4 : Appel moi maître !
+## Exercice 4 : Appel moi maître !
 #### Fonctionnement de l'I2C : 
 I2C : Inter-Integrated Circuit 
 
@@ -203,7 +203,7 @@ nous pouvons donc maintenant décoder notre archive 7z avec ce password :
 SPI_1S_US3FU77
 ```
 
-### Exercice 6 : Une histoire d'écoute 
+## Exercice 6 : Une histoire d'écoute 
 
 ![](assets/posts/2024-07-17-Hardware-CTF/35.png)
 
@@ -228,7 +228,7 @@ Ce qui donne en décodant le morse :
 C0UC0U_TU_V3UX_V0IR3_M0N_M0R53_?
 ```
 
-### Exercice 7 : Le sens de la vie 
+## Exercice 7 : Le sens de la vie 
 
 Lorsque l'on lance l'exercice 7 : 
 ![](assets/posts/2024-07-17-Hardware-CTF/39.png)
