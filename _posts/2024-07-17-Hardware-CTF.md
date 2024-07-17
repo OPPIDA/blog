@@ -30,7 +30,7 @@ Plusieurs devices sont possible pour heberger ce challenge, mais pour cet articl
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
 
 ## Soudure  
-<img src="assets/posts/2024-07-17-Hardware-CTF/2.png" width="250" height="250" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/2.png" width="350" height="350" />
 
 ## Flash + Accès au menu
 
@@ -61,7 +61,7 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 => mise en place de l'ATmega32U4 sur la breadbord
 ![](assets/posts/2024-07-17-Hardware-CTF/5.png)
 
-## ____________________________________________________________________
+## _______________________________________________________________________
 
 ## Exercice 1 :  Donne moi le flag !
 
