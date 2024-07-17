@@ -47,15 +47,18 @@ avrdude "-Cavrdude.conf" -v -V -patmega32u4 -cavr109 "-P/dev/ttyACM1" -b57600 -D
 
 L'accès au menu se fait par une connexion en serie sur le port USB de l'ATmega :
 
-![[assets/posts/2024-07-17-Hardware-CTF/3.png]]
-![[assets/posts/2024-07-17-Hardware-CTF/4.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/3.png)
+![](assets/posts/2024-07-17-Hardware-CTF/4.png)
 
 ## Installation sur une breadbord : 
-Une breadbord est simple a utiliser, tout les pins sont mappées... 
+Une breadbord permet de relier les composants sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
+cet objet est très simple à utiliser, elle est composée de trous espacés de 2.54mm permettant d’enfoncer des composants et de les relier entre eux afin de réaliser le montage à tester.
+Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
-![[assets/posts/2024-07-17-Hardware-CTF/6.png]]
 
-![[assets/posts/2024-07-17-Hardware-CTF/5.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/6.png)
+
+![](assets/posts/2024-07-17-Hardware-CTF/7.png)
 
 ## Exercices 
 
@@ -160,41 +163,41 @@ SDA = la data
 ![](assets/posts/2024-07-17-Hardware-CTF/25.png)
 
 je suis longtemps resté bloqué sur ce chall jusqu'a ce que j'ai un hint du créateur du chall : 
-![[assets/posts/2024-07-17-Hardware-CTF/26.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/26.png)
 
 je dois donc m'aider d'un autre exercice pour résoudre celui ci, 
-Si l'on regarde donc l'exo d'après : 
-![[assets/posts/2024-07-17-Hardware-CTF/27.png]]
+Si l'on regarde donc l'exo d'après :  
+![](assets/posts/2024-07-17-Hardware-CTF/27.png)
 
-nous avons bien à faire à un esclave, cela est donc cohérent.
-![[assets/posts/2024-07-17-Hardware-CTF/28.png]]
+nous avons bien à faire à un esclave, cela est donc cohérent.  
+![](assets/posts/2024-07-17-Hardware-CTF/28.png)
 
 Les pins de l'atmega32 correspondant à l'I2C sont donc les 2 et 3
 2 pour la data et 3 pour la clock. 
 
 Lorsque le maitre envoie ses commandes I2C : 
-aucune réponse de slave ne lui est renvoyé donc 0x2A NAK :
-![[assets/posts/2024-07-17-Hardware-CTF/29.png]]
+aucune réponse de slave ne lui est renvoyé donc 0x2A NAK :  
+![](assets/posts/2024-07-17-Hardware-CTF/29.png)
 
 mais par contre lorsqu'on connecte un autre atémega3 et qu'on le lance l'exo 5, on le passe donc en mode slave. 
-L'échange est beaucoup plus important et l'on voit de la data passer : 
+L'échange est beaucoup plus important et l'on voit de la data passer :  
 
-![[assets/posts/2024-07-17-Hardware-CTF/30.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/30.png)
 
 - Le câble SDA Maitre sur le SDA Escale (Data)
-- Le câble SCL Maitre sur le SCL Maitre (Clock)
-![[assets/posts/2024-07-17-Hardware-CTF/31.png]]
+- Le câble SCL Maitre sur le SCL Maitre (Clock)  
+![](assets/posts/2024-07-17-Hardware-CTF/31.png)
 
 Durant la capture : 
 
-![[assets/posts/2024-07-17-Hardware-CTF/32.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/32.png)
 
-Utilisation ensuite de python et unicode escape pour convertir notre data en GIF : 
-![[assets/posts/2024-07-17-Hardware-CTF/33.png]]
+Utilisation ensuite de python et unicode escape pour convertir notre data en GIF :   
+![](assets/posts/2024-07-17-Hardware-CTF/33.png)
 
 nous pouvons donc maintenant décoder notre archive 7z avec ce password : 
 
-![[assets/posts/2024-07-17-Hardware-CTF/34.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/34.png)
 
 ```
 SPI_1S_US3FU77
@@ -202,18 +205,18 @@ SPI_1S_US3FU77
 
 ### Exercice 6 : Une histoire d'écoute 
 
-![[assets/posts/2024-07-17-Hardware-CTF/35.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/35.png)
 
 Branchement donc sur le pin 10 
-![[assets/posts/2024-07-17-Hardware-CTF/36.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/36.png)
 
 
 Puis écoute d'une communication à l'analyseur logique : 
 
-Les "bits" de synchro du début nous montrent comment reconnaitre un long (-) et un court (.) :
-![[assets/posts/2024-07-17-Hardware-CTF/37.png]]
-Entièreté de la communication : 
-![[assets/posts/2024-07-17-Hardware-CTF/38.png]]
+Les "bits" de synchro du début nous montrent comment reconnaitre un long (-) et un court (.) :  
+![](assets/posts/2024-07-17-Hardware-CTF/37.png)
+Entièreté de la communication :   
+![](assets/posts/2024-07-17-Hardware-CTF/38.png)
 
 puis décodage : 
 ```
@@ -228,20 +231,19 @@ C0UC0U_TU_V3UX_V0IR3_M0N_M0R53_?
 ### Exercice 7 : Le sens de la vie 
 
 Lorsque l'on lance l'exercice 7 : 
-![[assets/posts/2024-07-17-Hardware-CTF/39.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/39.png)
 
 Après de nombreuse manipulation, je comprend que si l'on mappe certain pin entre eux, le binaire change et donc le résultat en décimal change : 
-par exemple le CVV et la 4 : 
-![[assets/posts/2024-07-17-Hardware-CTF/40.png]]
-
-![[assets/posts/2024-07-17-Hardware-CTF/41.png]]
+par exemple le CVV et la 4 :   
+![](assets/posts/2024-07-17-Hardware-CTF/40.png)
+  
+![](assets/posts/2024-07-17-Hardware-CTF/41.png)
 l'exercice 7 nous fais comprendre par sa phrase : "Connais tu la réponse ultime ?" 
 qu'il attend le nombre 42 : Essayons donc de lui donner. 
 
 Lorsqu'on mappe les pins : VCC + 3 
-![[assets/posts/2024-07-17-Hardware-CTF/42.png]]
-![[assets/posts/2024-07-17-Hardware-CTF/43.png]]
-
+![](assets/posts/2024-07-17-Hardware-CTF/42.png)  
+![](assets/posts/2024-07-17-Hardware-CTF/43.png)
 ````
 The flag is :F33L_Th3_P0w3r_0f_B1n@rY
 ```
