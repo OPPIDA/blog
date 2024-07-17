@@ -59,9 +59,9 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 ![](assets/posts/2024-07-17-Hardware-CTF/6.png)
 
 => mise en place de l'ATmega32U4 sur la breadbord
-![](assets/posts/2024-07-17-Hardware-CTF/5.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/5.png" width="350" height="350" />
 
-## _______________________________________________________________________
+## ____________________________________________________________________
 
 ## Exercice 1 :  Donne moi le flag !
 
@@ -77,7 +77,8 @@ USB_S3Ri@l_1s_T0_3@sY
 ![](assets/posts/2024-07-17-Hardware-CTF/8.png)
 
 Cette phrase nous indique qu'il mapper les pins A0 sur **True** et A1 sur **False** :  
-![](assets/posts/2024-07-17-Hardware-CTF/9.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/9.png" width="350" height="350" />
+
 
 ![](assets/posts/2024-07-17-Hardware-CTF/10.png)
 
@@ -85,7 +86,8 @@ Le message : "Tu bluffes Martoni ! " apparait.
 Nous avons donc réussi à mapper les bon pins, mais le flag n'apparait pas.
 L'énoncé nous parle de série, avec un Analyseur logique, il faut écouter TX et RX : 
 
-![](assets/posts/2024-07-17-Hardware-CTF/11.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/11.png" width="350" height="350" />
+
 
 Lors de l'écoute, la capture permet de voir ceci : 
 
@@ -97,7 +99,7 @@ Calcul du Baudrate avec l'extention "Baud Rate Estimate "
 
 Ajustement de la configuration de l'analyse :
 
-![](assets/posts/2024-07-17-Hardware-CTF/14.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/14.png" width="350" height="350" />
 
 Le flag apparait en ASSCI :  
 ![](assets/posts/2024-07-17-Hardware-CTF/15.png)
@@ -119,7 +121,8 @@ Le bus SPI utilise quatre signaux logiques :
 
  Dans la datasheet de l'ATemaga32 nous pouvons identifier les PINS du SPI : 
 
-![](assets/posts/2024-07-17-Hardware-CTF/17.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/17.png" width="350" height="350" />
+
 
 
 Avec l'analyseur logique : 
@@ -144,7 +147,7 @@ si nous copions donc l'entiéreté des data du flux :
 ![](assets/posts/2024-07-17-Hardware-CTF/21.png)
 
 
-![](assets/posts/2024-07-17-Hardware-CTF/22.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/22.png" width="350" height="350" />
 
 Nous n'avons malheureusement pas encore le mot de passe pour ouvrir cette archive :( 
 peut être dans un futur exercice... 
@@ -187,7 +190,7 @@ L'échange est beaucoup plus important et l'on voit de la data passer :
 
 - Le câble SDA Maitre sur le SDA Escale (Data)
 - Le câble SCL Maitre sur le SCL Maitre (Clock)  
-![](assets/posts/2024-07-17-Hardware-CTF/31.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/31.png" width="350" height="350" />
 
 Durant la capture : 
 
