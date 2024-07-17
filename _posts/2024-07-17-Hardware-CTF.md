@@ -17,7 +17,7 @@ Repo Github : [CTF-Hardware](https://github.com/smarrazzo/CTF-Hardware)
 Plusieurs devices sont possible pour heberger ce challenge, mais j'ai choisi une ATmega32U4
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
 
-## 1 ere étape - Soudure
+## 1 ere étape - Soudure  
 ![](assets/posts/2024-07-17-Hardware-CTF/2.png)
 
 ## 2 eme Etape - Flash + accès au menu
@@ -49,7 +49,7 @@ Une breadbord est simple a utiliser, tout les pins sont mappées...
 
 ### Exercice 1 :  Donne moi le flag !
 
-En démarrant l'exercice 1, le flag est affiché à l'écran 
+En démarrant l'exercice 1, le flag est affiché à l'écran  
 ![](assets/posts/2024-07-17-Hardware-CTF/7.png)
 
 ```
@@ -83,7 +83,7 @@ Ajustement de la configuration de l'analyse :
 
 ![](assets/posts/2024-07-17-Hardware-CTF/14.png)
 
-Le flag apparait en ASSCI : 
+Le flag apparait en ASSCI :  
 ![](assets/posts/2024-07-17-Hardware-CTF/15.png)
 
 ```
@@ -92,7 +92,7 @@ The flag is : S3ri@L_1S_FuN!\r\n
 
 ### Exercice 3 :  Mosi et Miso sont sur un bateau
 
-![[Pasted image 20240530095416.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/16.png)
 
 L'énoncé indique MOSI / MISO, ce qui nous fait penser au SPI : 
 Le bus SPI utilise quatre signaux logiques :
@@ -103,12 +103,12 @@ Le bus SPI utilise quatre signaux logiques :
 
  Dans la datasheet de l'ATemaga32 nous pouvons identifier les PINS du SPI : 
 
-![[Pasted image 20240530101512.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/17.png)
 
 
 Avec l'analyseur logique : 
 
-![[Pasted image 20240530105045.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/18.png)
 
 il y a bien 3 flux : 
 - Le chanel 2 en rouge, nous identifions bien la clock (un signal régulier)
@@ -116,20 +116,19 @@ il y a bien 3 flux :
 - Le chanel 1 en blanc : MISO 
 
 
-![[Pasted image 20240530105320.png]]
-
+![](assets/posts/2024-07-17-Hardware-CTF/19.png)
 ```
 0x37 0x7A 0xBC 0xAF 0x27 0x1C
 ```
 
-![[Pasted image 20240530105438.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/20.png)
 
 
-si nous copions donc l'entiéreté des data du flux : 
-![[Pasted image 20240530105516.png]]
+si nous copions donc l'entiéreté des data du flux :  
+![](assets/posts/2024-07-17-Hardware-CTF/21.png)
 
 
-![[Pasted image 20240530105532.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/22.png)
 
 Nous n'avons malheureusement pas encore le mot de passe pour ouvrir cette archive :( 
 peut être dans un futur exercice... 
@@ -141,12 +140,12 @@ Les échanges ont toujours lieu entre un maître et un ou plusieurs esclave(s).
 
 SCL = clock 
 SDA = la data 
-![[Pasted image 20240603110706.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/23.png)
 
 
-![[Pasted image 20240603104039.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/24.png)
 
-![[Pasted image 20240603104058.png]]
+![](assets/posts/2024-07-17-Hardware-CTF/25.png)
 
 je suis longtemps resté bloqué sur ce chall jusqu'a ce que j'ai un hint du créateur du chall : 
 ![[Pasted image 20240603111147.png]]
