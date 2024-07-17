@@ -30,7 +30,7 @@ Plusieurs devices sont possible pour heberger ce challenge, mais pour cet articl
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
 
 ## Soudure  
-![](assets/posts/2024-07-17-Hardware-CTF/2.png)
+![](assets/posts/2024-07-17-Hardware-CTF/2.png =100x20)
 
 ## Flash + Accès au menu
 
