@@ -257,6 +257,7 @@ Lorsqu'on mappe les pins : VCC + 3
 <img src="assets/posts/2024-07-17-Hardware-CTF/42.png" width="350" height="350" />
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/43.png" width="350" height="350" />
-````
+
+```
 The flag is :F33L_Th3_P0w3r_0f_B1n@rY
 ```
