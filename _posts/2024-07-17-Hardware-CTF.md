@@ -32,7 +32,7 @@ Plusieurs devices sont possible pour heberger ce challenge, mais pour cet articl
 ## 1 ere étape - Soudure  
 ![](assets/posts/2024-07-17-Hardware-CTF/2.png)
 
-## 2 eme Etape - Flash + accès au menu
+## 2 eme Etape - Flash + Accès au menu
 
 Flash :
 
@@ -47,12 +47,12 @@ avrdude "-Cavrdude.conf" -v -V -patmega32u4 -cavr109 "-P/dev/ttyACM1" -b57600 -D
 
 L'accès au menu se fait par une connexion en serie sur le port USB de l'ATmega :
 
-![](assets/posts/2024-07-17-Hardware-CTF/3.png)
+![](assets/posts/2024-07-17-Hardware-CTF/3.png)  
 ![](assets/posts/2024-07-17-Hardware-CTF/4.png)
 
 ## Installation sur une breadbord : 
-Une breadbord permet de relier les composants sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
-cet objet est très simple à utiliser, elle est composée de trous espacés de 2.54mm permettant d’enfoncer des composants et de les relier entre eux afin de réaliser le montage à tester.
+Une breadbord est composée de trous espacés de 2.54mm permettant d’enfoncer des composants afin de les relier ensemble sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
+
 Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
 
