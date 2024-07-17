@@ -34,7 +34,7 @@ Plusieurs devices sont possible pour heberger ce challenge, mais pour cet articl
 
 ## Flash + Accès au menu
 
-Flash :
+Procédure pour flasher une ATmega32U4 :
 
 ```
 python3 reset.py /dev/ttyACM0
