@@ -29,10 +29,10 @@ Repo Github : [CTF-Hardware](https://github.com/smarrazzo/CTF-Hardware)
 Plusieurs devices sont possible pour heberger ce challenge, mais pour cet article, les exerice ont été réalisé sur une ATmega32U4:  
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
 
-# Soudure  
+## Soudure  
 ![](assets/posts/2024-07-17-Hardware-CTF/2.png)
 
-# Flash + Accès au menu
+## Flash + Accès au menu
 
 Flash :
 
@@ -50,7 +50,7 @@ L'accès au menu se fait par une connexion en serie sur le port USB de l'ATmega 
 ![](assets/posts/2024-07-17-Hardware-CTF/3.png)  
 ![](assets/posts/2024-07-17-Hardware-CTF/4.png)
 
-# Installation sur une breadbord : 
+## Installation sur une breadbord : 
 Une breadbord est composée de trous espacés de 2.54mm permettant d’enfoncer des composants afin de les relier ensemble sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
 
 Les trous qui appartiennent à une même ligne, sont reliés électriquement.
@@ -60,7 +60,7 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
 ![](assets/posts/2024-07-17-Hardware-CTF/7.png)
 
-# Exercices 
+## Exercices 
 
 ## Exercice 1 :  Donne moi le flag !
 
