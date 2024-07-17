@@ -216,6 +216,7 @@ SPI_1S_US3FU77
 ![](assets/posts/2024-07-17-Hardware-CTF/35.png)
 
 Branchement donc sur le pin 10 
+
 <img src="assets/posts/2024-07-17-Hardware-CTF/36.png" width="350" height="350" />
 
 
@@ -240,6 +241,7 @@ C0UC0U_TU_V3UX_V0IR3_M0N_M0R53_?
 ## Exercice 7 : Le sens de la vie 
 
 Lorsque l'on lance l'exercice 7 : 
+
 <img src="assets/posts/2024-07-17-Hardware-CTF/39.png" width="350" height="350" />
 
 Après de nombreuse manipulation, je comprend que si l'on mappe certain pin entre eux, le binaire change et donc le résultat en décimal change : 
