@@ -8,13 +8,25 @@ background_image: assets/Tridroid-Banner.jpg
 title_color: "#ffffff"
 ---
 
-![](assets/posts/2024-07-17-Hardware-CTF/1_01.png)
+Objectifs :
+- Apprentissage de la recherche documentaire (Datasheet)
+- Découverte d’un maximum de protocoles (SPI,UART,I2C, …)
+- Découverte d’outils (analyseur logique, oscilloscope)
+- Manipulations (breadboard, branchement des pins, glitch)
+- Sélection simple des exercices
+- Rappeler qu’avec quelques Ko on peut faire des trucs funs
+
+Résultats :
+- 9 Flags
+- Occupation 50% ROM et 90% de RAM
+- Des heures de fun (ou pas ☺ )
+- Multi platform -> ESP32-WROOM
 
 Ce projet est réalisé par [samuel.marrazzo](https://twitter.com/EnlargeYourGeek)
 
 Repo Github : [CTF-Hardware](https://github.com/smarrazzo/CTF-Hardware)
 
-Plusieurs devices sont possible pour heberger ce challenge, mais j'ai choisi une ATmega32U4
+Plusieurs devices sont possible pour heberger ce challenge, mais pour cet article, les exerice ont été réalisé sur une ATmega32U4
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
 
 ## 1 ere étape - Soudure  
@@ -148,26 +160,26 @@ SDA = la data
 ![](assets/posts/2024-07-17-Hardware-CTF/25.png)
 
 je suis longtemps resté bloqué sur ce chall jusqu'a ce que j'ai un hint du créateur du chall : 
-![[Pasted image 20240603111147.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/26.png]]
 
 je dois donc m'aider d'un autre exercice pour résoudre celui ci, 
 Si l'on regarde donc l'exo d'après : 
-![[Pasted image 20240603111239.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/27.png]]
 
 nous avons bien à faire à un esclave, cela est donc cohérent.
-![[Pasted image 20240603111412.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/28.png]]
 
 Les pins de l'atmega32 correspondant à l'I2C sont donc les 2 et 3
 2 pour la data et 3 pour la clock. 
 
 Lorsque le maitre envoie ses commandes I2C : 
 aucune réponse de slave ne lui est renvoyé donc 0x2A NAK :
-![[Pasted image 20240603113022.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/29.png]]
 
 mais par contre lorsqu'on connecte un autre atémega3 et qu'on le lance l'exo 5, on le passe donc en mode slave. 
 L'échange est beaucoup plus important et l'on voit de la data passer : 
 
-![[Pasted image 20240603131654.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/30.png]]
 
 - Le câble SDA Maitre sur le SDA Escale (Data)
 - Le câble SCL Maitre sur le SCL Maitre (Clock)
