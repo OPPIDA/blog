@@ -59,6 +59,7 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 ![](assets/posts/2024-07-17-Hardware-CTF/6.png)
 
 => mise en place de l'ATmega32U4 sur la breadbord  
+
 <img src="assets/posts/2024-07-17-Hardware-CTF/5.png" width="350" height="350" />
 
 ## ____________________________________________________________________
@@ -250,7 +251,9 @@ l'exercice 7 nous fais comprendre par sa phrase : "Connais tu la réponse ultime
 qu'il attend le nombre 42 : Essayons donc de lui donner. 
 
 Lorsqu'on mappe les pins : VCC + 3 
+
 <img src="assets/posts/2024-07-17-Hardware-CTF/42.png" width="350" height="350" />
+
 <img src="assets/posts/2024-07-17-Hardware-CTF/43.png" width="350" height="350" />
 ````
 The flag is :F33L_Th3_P0w3r_0f_B1n@rY
