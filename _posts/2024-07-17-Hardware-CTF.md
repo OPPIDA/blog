@@ -205,15 +205,15 @@ SPI_1S_US3FU77
 ![[assets/posts/2024-07-17-Hardware-CTF/35.png]]
 
 Branchement donc sur le pin 10 
-![[Pasted image 20240604110052.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/36.png]]
 
 
 Puis écoute d'une communication à l'analyseur logique : 
 
 Les "bits" de synchro du début nous montrent comment reconnaitre un long (-) et un court (.) :
-![[Pasted image 20240604110202.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/37.png]]
 Entièreté de la communication : 
-![[Pasted image 20240604105831.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/38.png]]
 
 puis décodage : 
 ```
@@ -228,19 +228,19 @@ C0UC0U_TU_V3UX_V0IR3_M0N_M0R53_?
 ### Exercice 7 : Le sens de la vie 
 
 Lorsque l'on lance l'exercice 7 : 
-![[Pasted image 20240716161514.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/39.png]]
 
 Après de nombreuse manipulation, je comprend que si l'on mappe certain pin entre eux, le binaire change et donc le résultat en décimal change : 
 par exemple le CVV et la 4 : 
-![[Pasted image 20240716162534.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/40.png]]
 
-![[Pasted image 20240716162208.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/41.png]]
 l'exercice 7 nous fais comprendre par sa phrase : "Connais tu la réponse ultime ?" 
 qu'il attend le nombre 42 : Essayons donc de lui donner. 
 
 Lorsqu'on mappe les pins : VCC + 3 
-![[Pasted image 20240716163327.png]]
-![[Pasted image 20240716163003.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/42.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/43.png]]
 
 ````
 The flag is :F33L_Th3_P0w3r_0f_B1n@rY
