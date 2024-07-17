@@ -190,6 +190,7 @@ L'échange est beaucoup plus important et l'on voit de la data passer :
 
 - Le câble SDA Maitre sur le SDA Escale (Data)
 - Le câble SCL Maitre sur le SCL Maitre (Clock)  
+  
 <img src="assets/posts/2024-07-17-Hardware-CTF/31.png" width="350" height="350" />
 
 Durant la capture : 
@@ -197,11 +198,13 @@ Durant la capture :
 ![](assets/posts/2024-07-17-Hardware-CTF/32.png)
 
 Utilisation ensuite de python et unicode escape pour convertir notre data en GIF :   
-![](assets/posts/2024-07-17-Hardware-CTF/33.png)
+
+<img src="assets/posts/2024-07-17-Hardware-CTF/33.png" width="350" height="350" />
+
 
 nous pouvons donc maintenant décoder notre archive 7z avec ce password : 
 
-![](assets/posts/2024-07-17-Hardware-CTF/34.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/34.png" width="350" height="350" />
 
 ```
 SPI_1S_US3FU77
@@ -212,7 +215,8 @@ SPI_1S_US3FU77
 ![](assets/posts/2024-07-17-Hardware-CTF/35.png)
 
 Branchement donc sur le pin 10 
-![](assets/posts/2024-07-17-Hardware-CTF/36.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/36.png" width="350" height="350" />
+
 
 
 Puis écoute d'une communication à l'analyseur logique : 
@@ -235,19 +239,19 @@ C0UC0U_TU_V3UX_V0IR3_M0N_M0R53_?
 ## Exercice 7 : Le sens de la vie 
 
 Lorsque l'on lance l'exercice 7 : 
-![](assets/posts/2024-07-17-Hardware-CTF/39.png)  
+<img src="assets/posts/2024-07-17-Hardware-CTF/39.png" width="350" height="350" />
 
 Après de nombreuse manipulation, je comprend que si l'on mappe certain pin entre eux, le binaire change et donc le résultat en décimal change : 
 par exemple le CVV et la 4 :   
-![](assets/posts/2024-07-17-Hardware-CTF/40.png)  
+<img src="assets/posts/2024-07-17-Hardware-CTF/40.png" width="350" height="350" />
   
 ![](assets/posts/2024-07-17-Hardware-CTF/41.png)  
 l'exercice 7 nous fais comprendre par sa phrase : "Connais tu la réponse ultime ?" 
 qu'il attend le nombre 42 : Essayons donc de lui donner. 
 
 Lorsqu'on mappe les pins : VCC + 3 
-![](assets/posts/2024-07-17-Hardware-CTF/42.png)  
-![](assets/posts/2024-07-17-Hardware-CTF/43.png)
+<img src="assets/posts/2024-07-17-Hardware-CTF/42.png" width="350" height="350" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/43.png" width="350" height="350" />
 ````
 The flag is :F33L_Th3_P0w3r_0f_B1n@rY
 ```
