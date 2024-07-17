@@ -231,13 +231,13 @@ C0UC0U_TU_V3UX_V0IR3_M0N_M0R53_?
 ## Exercice 7 : Le sens de la vie 
 
 Lorsque l'on lance l'exercice 7 : 
-![](assets/posts/2024-07-17-Hardware-CTF/39.png)
+![](assets/posts/2024-07-17-Hardware-CTF/39.png)  
 
 Après de nombreuse manipulation, je comprend que si l'on mappe certain pin entre eux, le binaire change et donc le résultat en décimal change : 
 par exemple le CVV et la 4 :   
-![](assets/posts/2024-07-17-Hardware-CTF/40.png)
+![](assets/posts/2024-07-17-Hardware-CTF/40.png)  
   
-![](assets/posts/2024-07-17-Hardware-CTF/41.png)
+![](assets/posts/2024-07-17-Hardware-CTF/41.png)  
 l'exercice 7 nous fais comprendre par sa phrase : "Connais tu la réponse ultime ?" 
 qu'il attend le nombre 42 : Essayons donc de lui donner. 
 
