@@ -58,7 +58,7 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
 ![](assets/posts/2024-07-17-Hardware-CTF/6.png)
 
-![](assets/posts/2024-07-17-Hardware-CTF/7.png)
+![](assets/posts/2024-07-17-Hardware-CTF/5.png)
 
 ## ______________________________________________________________________________________________________________________________________________
 
