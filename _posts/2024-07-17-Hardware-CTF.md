@@ -8,7 +8,7 @@ background_image: assets/Tridroid-Banner.jpg
 title_color: "#ffffff"
 ---
 
-![](assets/posts/2024-07-17-Hardware-CTF/1_0.png)
+![](assets/posts/2024-07-17-Hardware-CTF/1_01.png)
 
 Ce projet est réalisé par samuel.marrazzo (https://twitter.com/EnlargeYourGeek)
 
@@ -37,8 +37,8 @@ avrdude "-Cavrdude.conf" -v -V -patmega32u4 -cavr109 "-P/dev/ttyACM1" -b57600 -D
 
 L'accès au menu se fait par une connexion en serie sur le port USB de l'ATmega :
 
-![[3.png]]
-![[4.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/3.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/4.png]]
 
 ## Installation sur une breadbord : 
 Une breadbord est simple a utiliser, tout les pins sont mappées... 
