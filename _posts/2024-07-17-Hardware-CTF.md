@@ -10,11 +10,9 @@ title_color: "#ffffff"
 
 ![](assets/posts/2024-07-17-Hardware-CTF/1_01.png)
 
-Ce projet est réalisé par samuel.marrazzo (https://twitter.com/EnlargeYourGeek)
-
+Ce projet est réalisé par [samuel.marrazzo](https://twitter.com/EnlargeYourGeek)
 
 Repo Github : [CTF-Hardware](https://github.com/smarrazzo/CTF-Hardware)
-
 
 Plusieurs devices sont possible pour heberger ce challenge, mais j'ai choisi une ATmega32U4
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
@@ -43,16 +41,16 @@ L'accès au menu se fait par une connexion en serie sur le port USB de l'ATmega 
 ## Installation sur une breadbord : 
 Une breadbord est simple a utiliser, tout les pins sont mappées... 
 
-![[6.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/6.png]]
 
-![[5.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/5.png]]
 
 ## Exercices 
 
 ### Exercice 1 :  Donne moi le flag !
 
 En démarrant l'exercice 1, le flag est affiché à l'écran 
-![](7.png)
+![](assets/posts/2024-07-17-Hardware-CTF/7.png)
 
 ```
 USB_S3Ri@l_1s_T0_3@sY
@@ -60,33 +58,33 @@ USB_S3Ri@l_1s_T0_3@sY
 
 ### Exercice 2 :  Je crois que nous avons affaire à un serial killer!
 
-![](8.png)
+![](assets/posts/2024-07-17-Hardware-CTF/8.png)
 
 Cette phrase nous indique qu'il mapper les pins A0 sur **True** et A1 sur **False** :  
-![](9.png)
+![](assets/posts/2024-07-17-Hardware-CTF/9.png)
 
-![](10.png)
+![](assets/posts/2024-07-17-Hardware-CTF/10.png)
 
 Le message : "Tu bluffes Martoni ! " apparait. 
 Nous avons donc réussi à mapper les bon pins, mais le flag n'apparait pas.
 L'énoncé nous parle de série, avec un Analyseur logique, il faut écouter TX et RX : 
 
-![](11.png)
+![](assets/posts/2024-07-17-Hardware-CTF/11.png)
 
 Lors de l'écoute, la capture permet de voir ceci : 
 
-![](12.png)
+![](assets/posts/2024-07-17-Hardware-CTF/12.png)
 
 Calcul du Baudrate avec l'extention "Baud Rate Estimate " 
 
-![](13.png)
+![](assets/posts/2024-07-17-Hardware-CTF/13.png)
 
 Ajustement de la configuration de l'analyse :
 
-![](14.png)
+![](assets/posts/2024-07-17-Hardware-CTF/14.png)
 
 Le flag apparait en ASSCI : 
-![](15.png)
+![](assets/posts/2024-07-17-Hardware-CTF/15.png)
 
 ```
 The flag is : S3ri@L_1S_FuN!\r\n
