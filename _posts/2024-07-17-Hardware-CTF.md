@@ -26,7 +26,7 @@ Ce projet est réalisé par [samuel.marrazzo](https://twitter.com/EnlargeYourGee
 
 Repo Github : [CTF-Hardware](https://github.com/smarrazzo/CTF-Hardware)
 
-Plusieurs devices sont possible pour heberger ce challenge, mais pour cet article, les exerice ont été réalisé sur une ATmega32U4
+Plusieurs devices sont possible pour heberger ce challenge, mais pour cet article, les exerice ont été réalisé sur une ATmega32U4:  
 ![](assets/posts/2024-07-17-Hardware-CTF/1.png)
 
 ## 1 ere étape - Soudure  
@@ -183,18 +183,18 @@ L'échange est beaucoup plus important et l'on voit de la data passer :
 
 - Le câble SDA Maitre sur le SDA Escale (Data)
 - Le câble SCL Maitre sur le SCL Maitre (Clock)
-![[Pasted image 20240603132055.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/31.png]]
 
 Durant la capture : 
 
-![[Pasted image 20240603140133.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/32.png]]
 
 Utilisation ensuite de python et unicode escape pour convertir notre data en GIF : 
-![[Pasted image 20240603141736.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/33.png]]
 
 nous pouvons donc maintenant décoder notre archive 7z avec ce password : 
 
-![[Pasted image 20240603141926.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/34.png]]
 
 ```
 SPI_1S_US3FU77
@@ -202,7 +202,7 @@ SPI_1S_US3FU77
 
 ### Exercice 6 : Une histoire d'écoute 
 
-![[Pasted image 20240604105937.png]]
+![[assets/posts/2024-07-17-Hardware-CTF/35.png]]
 
 Branchement donc sur le pin 10 
 ![[Pasted image 20240604110052.png]]
