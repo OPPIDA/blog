@@ -147,7 +147,7 @@ si nous copions donc l'entiéreté des data du flux :
 
 Nous n'avons malheureusement pas encore le mot de passe pour ouvrir cette archive :( 
 peut être dans un futur exercice... 
-## Exercice 4 : Appel moi maître !
+## Exercice 4/5 : Appel moi maître !
 #### Fonctionnement de l'I2C : 
 I2C : Inter-Integrated Circuit 
 
