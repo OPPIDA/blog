@@ -172,7 +172,8 @@ si nous copions donc l'entiéreté des data du flux :
 Nous n'avons malheureusement pas encore le mot de passe pour ouvrir cette archive :( 
 peut être dans un futur exercice... 
 ## Exercice 4/5 : Appel moi maître !
-#### Fonctionnement de l'I2C : 
+
+Fonctionnement de l'I2C : 
 I2C : Inter-Integrated Circuit 
 
 Les échanges ont toujours lieu entre un maître et un ou plusieurs esclave(s): 
