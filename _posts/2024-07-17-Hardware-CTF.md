@@ -281,7 +281,7 @@ Lorsqu'on mappe les pins : VCC + 3
 The flag is :F33L_Th3_P0w3r_0f_B1n@rY
 ```
 
-## Exercice 8 - En sortie, l'union fait la force. : 
+## Exercice 8 - En sortie, l'union fait la force : 
 
 ```
 Menu :>8
@@ -295,7 +295,7 @@ Après analyse de tout les pins, seul, les pins de 0 à 7 sortent de la data.
 
 
 Branchement et analyse de cette data à l'aide de l'analyseur logique. 
-<img src="assets/posts/2024-07-17-Hardware-CTF/46.png" width="350" height="350" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/46.png" width="550" height="550" />
 
 Cela semble être du binaire classique (0 en bas, et 1 en haut)
 
@@ -306,13 +306,13 @@ Des fois c'est bien de changer de perspectives
 ```
 
 Si le sens de la capture change, et qu'on la regarde "d'une autre perspective" : 
-<img src="assets/posts/2024-07-17-Hardware-CTF/47.png" width="350" height="350" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/47.png" width="450" height="450" />
 
 Le premier octet commence par : 01000100 => ce qui correspond à un D en ascii. 
 
 
 Extraction de toute la data en faisant ça pour toute la capture : 
-<img src="assets/posts/2024-07-17-Hardware-CTF/48.png" width="350" height="350" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/48.png" width="450" height="450" />
 
 Extraction de toute la data : 
 ```
