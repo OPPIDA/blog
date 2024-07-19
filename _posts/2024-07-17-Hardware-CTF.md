@@ -175,10 +175,9 @@ peut être dans un futur exercice...
 #### Fonctionnement de l'I2C : 
 I2C : Inter-Integrated Circuit 
 
-Les échanges ont toujours lieu entre un maître et un ou plusieurs esclave(s). 
-
-SCL = clock 
-SDA = la data 
+Les échanges ont toujours lieu entre un maître et un ou plusieurs esclave(s): 
+- SCL = clock 
+- SDA = la data 
 ![](assets/posts/2024-07-17-Hardware-CTF/23.png)
 
 
