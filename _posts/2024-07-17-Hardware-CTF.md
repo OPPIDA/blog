@@ -125,7 +125,7 @@ Le flag apparait en ASSCI :
 ![](assets/posts/2024-07-17-Hardware-CTF/15.png)
 
 ```
-The flag is : S3ri@L_1S_FuN!\r\n
+The flag is : S3ri@L_1S_FuN!
 ```
 
 ## Exercice 3 :  Mosi et Miso sont sur un bateau
