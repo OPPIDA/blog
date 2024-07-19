@@ -48,7 +48,26 @@ avrdude "-Cavrdude.conf" -v -V -patmega32u4 -cavr109 "-P/dev/ttyACM1" -b57600 -D
 L'accès au menu se fait par une connexion en serie sur le port USB de l'ATmega :
 
 ![](assets/posts/2024-07-17-Hardware-CTF/3.png)  
-![](assets/posts/2024-07-17-Hardware-CTF/4.png)
+
+```
+Menu :>?
+
+1 - Donne moi le flag !
+2 - Je crois que nous avons affaire à un serial killer!
+3 - Mosi et Miso sont sur un bateau ...
+4 - Appel moi maître !
+5 - Oui Maître !
+6 - Une histoire d'écoute.
+7 - Le sens de la vie.
+8 - En sortie, l'union fait la force.
+9 - Jouons à sha!
+a - Bincat
+b - Touch me !
+? - Help
+
+Menu :>
+```
+
 
 ## Installation sur une breadbord : 
 Une breadbord est composée de trous espacés de 2.54mm permettant d’enfoncer des composants afin de les relier ensemble sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
@@ -60,7 +79,7 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
 => mise en place de l'ATmega32U4 sur la breadbord  
 
-<img src="assets/posts/2024-07-17-Hardware-CTF/5.png" width="350" height="350" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/44.png" width="550" height="550" />
 
 ## ____________________________________________________________________
 
