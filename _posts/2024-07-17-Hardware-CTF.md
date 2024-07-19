@@ -77,7 +77,7 @@ Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
 ![](assets/posts/2024-07-17-Hardware-CTF/6.png)
 
-=> mise en place de l'ATmega32U4 sur la breadbord  
+> mise en place de l'ATmega32U4 sur la breadbord : 
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/44.png" width="550" height="550" />
 
