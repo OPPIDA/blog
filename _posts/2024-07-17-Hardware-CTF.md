@@ -310,7 +310,7 @@ Si le sens de la capture change, et qu'on la regarde "d'une autre perspective" :
 Le premier octet commence par : 01000100 => ce qui correspond à un D en ascii. 
 
 
-Extraction de toute la data en faisant ça pour toute la capture : 
+Extraction du flag en faisant ça sur toute la capture : 
 <img src="assets/posts/2024-07-17-Hardware-CTF/48.png" width="450" height="450" />
 
 Extraction de toute la data : 
