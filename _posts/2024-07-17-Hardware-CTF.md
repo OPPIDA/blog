@@ -424,7 +424,7 @@ Et pour dump une eeprom, nous pouvons utiliser l'outil [avrdude](https://github.
 ```
 Print du flag en Hexa : 
 ```
-┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+┌──(plm㉿oppida)-[~/CTF-Hardware/_eeprom_dimp.extracted]
 └─$ strings 0.hex | xxd -r -p
  D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3! ��������������������������������
 @��������������������������������� `��������������������������������� ���������������������������������� ���������������������������������` ���������������������������������@ ���������������������������������  ���������������������������������  ��������������������������������� @��������������������������������� `��������������������������������� 
