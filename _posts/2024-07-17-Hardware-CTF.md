@@ -356,21 +356,21 @@ j'ai mis du temps avant de comprendre ce qu'il fallait faire pour cet exercice :
 
 L'idée est de regarder la datasheet et de voir que certain pin ne sont pas utilisé et non connecter a la carte.
 
-<img src="assets/posts/2024-07-17-Hardware-CTF/5X.png" width="450" height="450" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/54.png" width="450" height="450" />
 
 il faut donc allez les toucher directement sur la puce avec un petit bout de papier humide (afin de faire contact mais sans faire de court circuit)
 Les pins non utilisé etant A4 / A5 
 Ces pins se situe la sur l'ATmega32u4 : (petit points verts)
 
-<img src="assets/posts/2024-07-17-Hardware-CTF/5X.png" width="450" height="450" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/55.png" width="450" height="450" />
 
 Pour cet exos nos meilleurs amis seront un petit verre d'eau et un bout de mouchoir : 
 
-<img src="assets/posts/2024-07-17-Hardware-CTF/5X.png" width="450" height="450" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/56.png" width="450" height="450" />
 
 
 bout de mouchoir que l'on vient poser directement entre la pin A4 et A5 pour faire contact
-<img src="assets/posts/2024-07-17-Hardware-CTF/5X.png" width="450" height="450" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/57.png" width="450" height="450" />
 
 Sur notre terminal le nombre satisfaction monte en flèche jusqu'à ce que le flag apparaisse : 
 
