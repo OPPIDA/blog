@@ -357,9 +357,8 @@ D1G1t@7_I0s_@r3_1mp0rT@nt_!
 Encore un hint du créateur qui nous dit : 
 ```à l'origine il fallait les passer au UV pour les effacer```
 
-je comprend donc que c'est dans l'eeprom que le flag se trouve : 
-pour lire une eeprom sur une ATmega32U, avrdude est possible, comme la flash : 
-
+je comprend donc que c'est dans l'eeprom que le flag se trouve.
+Et pour dump une eeprom, nous pouvons utiliser l'outil avrdude :   
 ```
 ┌──(plm㉿oppida)-[~/CTF-Hardware/]
 └─$ python3 reset.py /dev/ttyACM1
@@ -386,7 +385,8 @@ Print du flag en Hexa :
 ```
 ┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
 └─$ strings 0.hex | xxd -r -p
- D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3! �������������������������������� @��������������������������������� `��������������������������������� ���������������������������������� ���������������������������������` ���������������������������������@ ���������������������������������  ���������������������������������  ��������������������������������� @��������������������������������� `��������������������������������� 
+ D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3! ��������������������������������
+@��������������������������������� `��������������������������������� ���������������������������������� ���������������������������������` ���������������������������������@ ���������������������������������  ���������������������������������  ��������������������������������� @��������������������������������� `��������������������������������� 
 ```
 
 ```
@@ -410,11 +410,11 @@ Donc je concatène et fais le sha256 de l'ensemble de mes flags :
 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad96774cc  -
 ```
 
-je pense qu'il faut ensuite utiliser l'exercice A pour résoudre l'exercice 9, un peu comme l'exercice 5 avec le 4.
+je pense qu'il faut ensuite utiliser l'exercice 'a' pour résoudre l'exercice 9, un peu comme l'exercice 5 avec le 4.
 
-L'énoncé de l'exercice A dis : ```BinCat attend 2 Octets au format HEX, via le terminal```
+L'énoncé de l'exercice 'a' dis : ```BinCat attend 2 Octets au format HEX, via le terminal```
 
-je comprend donc qu'il faut découper notre résultat attendu comme ceci : 
+je comprend donc qu'il faut découper notre le sha256 de comme ceci : 
 ```
 8fc2
 1809
@@ -434,15 +434,15 @@ d967
 74cc
 ```
 
-et ensuite l'envoyer par un moyen que je ne connait pas encore. 
-Mais si c'est comme l'exercice 4 et 5 il faut un deuxième device qui va ennoyer la data à notre premier. 
-Et vu que l'exercice stipule qu'il faut utiliser les 16 bits IO dans l'ordre croissant je fais un montage qui relie chaque pin de 1 à 16 du premier au second comme ceci : 
+Et ensuite l'envoyer par un moyen que je ne connait pas encore. 
+Si c'est comme l'exercice 4 et 5, il faut un deuxième device qui va envoyer la data à notre premier. 
+Et vu que l'exercice stipule qu'il faut utiliser les 16 bits IO dans l'ordre croissant je fais un montage qui relie chaque pin de 1 à 16 du premier device au second comme ceci : 
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/52.png" width="550" height="550" />
 
 Maintenant, l'atmega à droite écoute et celui de gauche envoie,lorsque j'envoie 2 octet en Hexa dans mon premier device, le deuxieme recupère bien mes données. 
 
-<img src="assets/posts/2024-07-17-Hardware-CTF/53.png" width="550" height="550" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/53.png" width="650" height="650" />
 
 je n'ai plus qu'a faire ca sur l'ensemble de ma chaine de charactère sha256 : 
 
