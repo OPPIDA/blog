@@ -352,7 +352,7 @@ D1G1t@7_I0s_@r3_1mp0rT@nt_!
 
 ### Exercice C : 
 
-<img src="assets/posts/2024-07-17-Hardware-CTF/47.png" width="550" height="550" />
+<img src="assets/posts/2024-07-17-Hardware-CTF/51.png" width="550" height="550" />
 
 ```
 ┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
