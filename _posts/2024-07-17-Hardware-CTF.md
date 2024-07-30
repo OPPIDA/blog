@@ -350,7 +350,7 @@ Ce qui une fois décodé donne :
 D1G1t@7_I0s_@r3_1mp0rT@nt_!
 ```
 
-## Exercice c - Hide and seek :  
+## Exercice c - Hide and seek 
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/51.png" width="550" height="550" />
 
@@ -393,7 +393,7 @@ Print du flag en Hexa :
 D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3!
 ```
 
-## Exercice 9 - Jouons à sha ! : 
+## Exercice 9 - Jouons à sha !
 
 Lancement de l'exercice 9 : 
 ```
