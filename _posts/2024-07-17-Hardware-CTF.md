@@ -69,7 +69,7 @@ Menu :>
 ```
 
 
-## Installation sur une breadbord : 
+## Installation sur une breadbord
 Une breadbord est composée de trous espacés de 2.54mm permettant d’enfoncer des composants afin de les relier ensemble sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
 
 Les trous qui appartiennent à une même ligne, sont reliés électriquement.
@@ -281,7 +281,7 @@ Lorsqu'on mappe les pins : VCC + 3
 The flag is :F33L_Th3_P0w3r_0f_B1n@rY
 ```
 
-## Exercice 8 - En sortie, l'union fait la force : 
+## Exercice 8 - En sortie, l'union fait la force
 
 ```
 Menu :>8
