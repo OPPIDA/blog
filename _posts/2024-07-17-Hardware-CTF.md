@@ -358,7 +358,7 @@ Encore un hint du créateur qui nous dit :
 ```à l'origine il fallait les passer au UV pour les effacer```
 
 je comprend donc que c'est dans l'eeprom que le flag se trouve.
-Et pour dump une eeprom, nous pouvons utiliser l'outil avrdude :   
+Et pour dump une eeprom, nous pouvons utiliser l'outil [avrdude](https://github.com/avrdudes/avrdude) :   
 ```
 ┌──(plm㉿oppida)-[~/CTF-Hardware/]
 └─$ python3 reset.py /dev/ttyACM1
