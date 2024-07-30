@@ -349,3 +349,237 @@ Ce qui une fois décodé donne :
 ```
 D1G1t@7_I0s_@r3_1mp0rT@nt_!
 ```
+
+### Exercice C : 
+
+<img src="assets/posts/2024-07-17-Hardware-CTF/47.png" width="550" height="550" />
+
+```
+┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+└─$ python3 reset.py /dev/ttyACM1
+```
+
+```
+┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+└─$ avrdude "-Cavrdude.conf" -v -V -patmega32u4 -cavr109 -P /dev/ttyACM0 -b57600 -U eeprom:r:eeprom_dimp:i 
+```
+
+```
+┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+└─$ strings 0.hex      
+:2000000044306E5F545F4630724733745F70337253317354346E63335F53743052346733A9
+:2000200021FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBE
+:20004000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0
+:20006000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA0
+:20008000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80
+:2000A000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF60
+:2000C000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF40
+:2000E000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+```
+
+```
+┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+└─$ strings 0.hex | xxd -r -p
+ D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3! �������������������������������� @��������������������������������� `��������������������������������� ���������������������������������� ���������������������������������` ���������������������������������@ ���������������������������������  ���������������������������������  ��������������������������������� @��������������������������������� `��������������������������������� 
+```
+
+### Exercice 9 : 
+
+Lancement de l'exercice 9 : 
+```
+Donner le sha256 de la concaténations des flags : sha256(1:2:3:4:6:7:8:b:c)
+En utilisant 16 bits IO dans l'ordre croissant
+```
+
+Donc je concatène et fais le sha256 de l'ensemble de mes flags : 
+
+```
+ ┌──(plm㉿oppida)-[CTF-Hardware/]
+ └─$ printf 'USB_S3Ri@l_1s_T0_3@sY:S3ri@L_1S_FuN!:SPI_1S_US3FU77:GIF_THROUGH_I2C:C0UC0U_TU_V3UX_V0IR3_M0N_M0R53_?:F33L_Th3_P0w3r_0f_B1n@rY:D1G1t@7_I0s_@r3_1mp0rT@nt_!:ThX_1_@m_50_Sa7i5f1ed_N0w_!:D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3!' | sha256sum
+ 
+8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad96774cc  -
+```
+
+je pense qu'il faut ensuite utiliser l'exercice A pour résoudre l'exercice 9, un peu comme l'exercice 5 avec le 4.
+
+L'énoncé de l'exercice A dis : ```BinCat attend 2 Octets au format HEX, via le terminal```
+
+je comprend donc qu'il faut découper notre résultat attendu comme ceci : 
+```
+8fc2
+1809
+73AE
+2bc2
+9a7b
+a53e
+e342
+1e5a
+0d57
+02ff
+155b
+6a56
+e03f
+a0aa
+d967
+74cc
+```
+
+et ensuite l'envoyer par un moyen que je ne connait pas encore. 
+Mais si c'est comme l'exercice 4 et 5 il faut un deuxième device qui va ennoyer la data à notre premier. 
+Et vu que l'exercice stipule qu'il faut utiliser les 16 bits IO dans l'ordre croissant je fais un montage qui relie chaque pin de 1 à 16 du premier au second comme ceci : 
+
+![[Pasted image 20240730153821.png]]
+
+Maintenant, l'atmega à droite écoute et celui de gauche envoie,lorsque j'envoie 2 octet en Hexa dans mon premier device, le deuxieme recupère bien mes données. 
+
+![[Pasted image 20240730155113.png]]
+
+je n'ai plus qu'a faire ca sur l'ensemble de ma chaine de charactère sha256 : 
+
+```
+Donner le sha256 de la concaténations des flags : sha256(1:2:3:4:6:7:8:b:c)
+En utilisant 16 bits IO dans l'ordre croissant
+Appuyer sur Entrer pour valider les 2 octetsQ/q pour quitter
+sha : e3c0
+sha : e3c6
+sha : 0000
+sha : 0000
+sha : 0000
+sha : 8fc3
+sha : 8fc3
+sha : 8fc2
+sha : 8fc2
+sha : 8fc2
+octets : 0 et 1 validés
+sha : 8fc28fc2
+sha : 8fc28fc2
+sha : 8fc21809
+sha : 8fc21809
+sha : 8fc21809
+sha : 8fc21809
+sha : 8fc21809
+sha : 8fc21809
+octets : 2 et 3 validés
+sha : 8fc218091809
+sha : 8fc218091809
+sha : 8fc2180973af
+sha : 8fc2180973af
+sha : 8fc2180973ae
+sha : 8fc2180973ae
+octets : 4 et 5 validés
+sha : 8fc2180973ae73ae
+sha : 8fc2180973ae73ae
+sha : 8fc2180973ae73ae
+sha : 8fc2180973ae73ae
+sha : 8fc2180973ae73ae
+sha : 8fc2180973ae2bc2
+sha : 8fc2180973ae2bc2
+sha : 8fc2180973ae2bc2
+octets : 6 et 7 validés
+sha : 8fc2180973ae2bc22bc2
+sha : 8fc2180973ae2bc22bc2
+sha : 8fc2180973ae2bc22bc2
+sha : 8fc2180973ae2bc29a7b
+sha : 8fc2180973ae2bc29a7b
+sha : 8fc2180973ae2bc29a7b
+sha : 8fc2180973ae2bc29a7b
+sha : 8fc2180973ae2bc29a7b
+octets : 8 et 9 validés
+sha : 8fc2180973ae2bc29a7b9a7b
+sha : 8fc2180973ae2bc29a7b9a7b
+sha : 8fc2180973ae2bc29a7ba53f
+sha : 8fc2180973ae2bc29a7ba53f
+sha : 8fc2180973ae2bc29a7ba53e
+sha : 8fc2180973ae2bc29a7ba53e
+sha : 8fc2180973ae2bc29a7ba53e
+sha : 8fc2180973ae2bc29a7ba53e
+sha : 8fc2180973ae2bc29a7ba53e
+sha : 8fc2180973ae2bc29a7ba53e
+octets : 10 et 11 validés
+sha : 8fc2180973ae2bc29a7ba53ea53e
+sha : 8fc2180973ae2bc29a7ba53ea53e
+sha : 8fc2180973ae2bc29a7ba53ee342
+sha : 8fc2180973ae2bc29a7ba53ee342
+sha : 8fc2180973ae2bc29a7ba53ee342
+sha : 8fc2180973ae2bc29a7ba53ee342
+sha : 8fc2180973ae2bc29a7ba53ee342
+sha : 8fc2180973ae2bc29a7ba53ee342
+octets : 12 et 13 validés
+sha : 8fc2180973ae2bc29a7ba53ee342e342
+sha : 8fc2180973ae2bc29a7ba53ee342e342
+sha : 8fc2180973ae2bc29a7ba53ee342e342
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a
+octets : 14 et 15 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a1e5a
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d57
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d57
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d57
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d57
+octets : 16 et 17 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d570d57
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d570d57
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff
+octets : 18 et 19 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff02ff
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff02ff
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff02ff
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b
+octets : 20 et 21 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b155b
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a57
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a57
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56
+octets : 22 et 23 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a566a56
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a566a56
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03f
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03f
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03f
+octets : 24 et 25 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fe03f
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0ab
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0ab
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aa
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aa
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aa
+octets : 26 et 27 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aaa0aa
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967
+octets : 28 et 29 validés
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad967d967
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad96774cc
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad96774cc
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad96774cc
+sha : 8fc2180973ae2bc29a7ba53ee3421e5a0d5702ff155b6a56e03fa0aad96774cc
+octets : 30 et 31 validés
+Shatrapé : S1R@S_3sT_Un_S@D1Qu3_!
+
+Menu :>
+```
+
+```
+S1R@S_3sT_Un_S@D1Qu3_!
+```
