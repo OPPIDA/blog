@@ -350,22 +350,28 @@ Ce qui une fois décodé donne :
 D1G1t@7_I0s_@r3_1mp0rT@nt_!
 ```
 
-## Exercice C : 
+## Exercice c : 
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/51.png" width="550" height="550" />
 
+Encore un hint du créateur qui nous dit : 
+```à l'origine il fallait les passer au UV pour les effacer```
+
+je comprend donc que c'est dans l'eeprom que le flag se trouve : 
+pour lire une eeprom sur une ATmega32U, avrdude est possible, comme la flash : 
+
 ```
-┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+┌──(plm㉿oppida)-[~/CTF-Hardware/]
 └─$ python3 reset.py /dev/ttyACM1
 ```
 
 ```
-┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+┌──(plm㉿oppida)-[~/CTF-Hardware/]
 └─$ avrdude "-Cavrdude.conf" -v -V -patmega32u4 -cavr109 -P /dev/ttyACM0 -b57600 -U eeprom:r:eeprom_dimp:i 
 ```
 
 ```
-┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
+┌──(plm㉿oppida)-[~/CTF-Hardware/_eeprom_dimp.extracted]
 └─$ strings 0.hex      
 :2000000044306E5F545F4630724733745F70337253317354346E63335F53743052346733A9
 :2000200021FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBE
@@ -376,11 +382,15 @@ D1G1t@7_I0s_@r3_1mp0rT@nt_!
 :2000C000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF40
 :2000E000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 ```
-
+Print du flag en Hexa : 
 ```
 ┌──(plm㉿oppida)-[~/…/CTF-Hardware/CTF-Hardware/Pro_micro/_eeprom_dimp.extracted]
 └─$ strings 0.hex | xxd -r -p
  D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3! �������������������������������� @��������������������������������� `��������������������������������� ���������������������������������� ���������������������������������` ���������������������������������@ ���������������������������������  ���������������������������������  ��������������������������������� @��������������������������������� `��������������������������������� 
+```
+
+```
+D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3!
 ```
 
 ## Exercice 9 : 
