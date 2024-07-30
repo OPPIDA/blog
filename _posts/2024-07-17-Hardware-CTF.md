@@ -350,7 +350,7 @@ Ce qui une fois décodé donne :
 D1G1t@7_I0s_@r3_1mp0rT@nt_!
 ```
 
-### Exercice C : 
+## Exercice C : 
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/51.png" width="550" height="550" />
 
@@ -383,7 +383,7 @@ D1G1t@7_I0s_@r3_1mp0rT@nt_!
  D0n_T_F0rG3t_p3rS1sT4nc3_St0R4g3! �������������������������������� @��������������������������������� `��������������������������������� ���������������������������������� ���������������������������������` ���������������������������������@ ���������������������������������  ���������������������������������  ��������������������������������� @��������������������������������� `��������������������������������� 
 ```
 
-### Exercice 9 : 
+## Exercice 9 : 
 
 Lancement de l'exercice 9 : 
 ```
@@ -428,11 +428,11 @@ et ensuite l'envoyer par un moyen que je ne connait pas encore.
 Mais si c'est comme l'exercice 4 et 5 il faut un deuxième device qui va ennoyer la data à notre premier. 
 Et vu que l'exercice stipule qu'il faut utiliser les 16 bits IO dans l'ordre croissant je fais un montage qui relie chaque pin de 1 à 16 du premier au second comme ceci : 
 
-![[Pasted image 20240730153821.png]]
+<img src="assets/posts/2024-07-17-Hardware-CTF/52.png" width="550" height="550" />
 
 Maintenant, l'atmega à droite écoute et celui de gauche envoie,lorsque j'envoie 2 octet en Hexa dans mon premier device, le deuxieme recupère bien mes données. 
 
-![[Pasted image 20240730155113.png]]
+<img src="assets/posts/2024-07-17-Hardware-CTF/53.png" width="550" height="550" />
 
 je n'ai plus qu'a faire ca sur l'ensemble de ma chaine de charactère sha256 : 
 
