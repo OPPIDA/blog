@@ -69,15 +69,15 @@ Menu :>
 ```
 
 
-## Installation sur une breadbord
-Une breadbord est composée de trous espacés de 2.54mm permettant d’enfoncer des composants afin de les relier ensemble sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
+## Installation sur une breadboard
+Une breadboard est composée de trous espacés de 2.54mm permettant d’enfoncer des composants afin de les relier ensemble sans avoir à les souder, ce qui permet de faire des tests très facilement et très rapidement.
 
 Les trous qui appartiennent à une même ligne, sont reliés électriquement.
 
 
 ![](assets/posts/2024-07-17-Hardware-CTF/6.png)
 
-> mise en place de l'ATmega32U4 sur la breadbord : 
+> mise en place de l'ATmega32U4 sur la breadboard : 
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/44.png" width="550" height="550" />
 
@@ -121,7 +121,7 @@ Ajustement de la configuration de l'analyse :
 
 <img src="assets/posts/2024-07-17-Hardware-CTF/14.png" width="350" height="350" />
 
-Le flag apparait en ASSCI :  
+Le flag apparait en ASCII :  
 ![](assets/posts/2024-07-17-Hardware-CTF/15.png)
 
 ```
