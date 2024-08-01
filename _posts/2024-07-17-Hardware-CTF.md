@@ -219,6 +219,21 @@ Durant la capture :
 
 Utilisation ensuite de python et unicode escape pour convertir notre data en GIF :   
 
+```
+data = r"W[*]GIF89aP\0\n\0\x91\0\0\xFF\xFF\xFF\0\0\0\xFF\xFF\xFF\0\0\0!\xF9\x04\x05\0\0\x02W[*]\0,\0\0\0\0P\0\n\0\0\x02l\x8C\x8F\xA9\xCB\xED\x0F\x0F\x98\xD2L\x90.\r\x98\xDB\xFBu\xDE\x08W[*]V#\xD2m\x12\xB5\xA5V#\x92\xAF'\xBA\xB4-g9\x97\xC6\xB3\x8F\n\xE60\xB5\xDFI\x08\x8C\x15M\xADW[*]\xD0BY\xD2\x9Cl\xC4\xCFJe:*\x99\xB3'\xF2\x85\xA3N\xB9\xBA\xAEV|,\x1BeKWs\xFDEW[*]\xB9U8\xC5v\xE8\]\xE3A\xE9>\x02\x18(8H\xC8\x83U\x88\xE8\x17Q\0\0;\0\0\0\0\0"
+
+# Suppression des séquences "W[*]"
+cleaned_data = data.replace('W[*]', '')
+
+byte_data = cleaned_data.encode('latin1').decode('unicode_escape').encode('latin1')
+
+# Écriture des octets dans un fichier GIF
+with open('output.gif', 'wb') as f:
+    f.write(byte_data)
+
+print("GIF sauvegardé dans > output.gif")
+```
+
 <img src="assets/posts/2024-07-17-Hardware-CTF/33.png" width="350" height="350" />
 
 
