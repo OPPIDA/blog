@@ -3,7 +3,7 @@ layout: post
 title: "WoW64 Process - POV from kernel"
 author: LLE
 date: 2024-06-25
-categories: Système
+categories: [Articles, Reverse]
 background_image: assets/kernel.jpg
 title_color: "#ffffff"
 ---

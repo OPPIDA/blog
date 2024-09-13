@@ -3,7 +3,7 @@ layout: post
 author: FPI
 title: "Filestore - Google CTF 2021"
 date: 2021-07-20
-categories: CTF
+categories: [CTF, Misc]
 background_image: assets/datacenter.jpg
 title_color: "#ffffff"
 ---
@@ -12,7 +12,7 @@ Le flag est stocké dans un service de stockage personnalisé. Le service n'ajou
 
 ## Détails
 
-- Catégorie : Misc
+- Catégorie : misc
 - Points : 50
 - Résolutions : 321
 

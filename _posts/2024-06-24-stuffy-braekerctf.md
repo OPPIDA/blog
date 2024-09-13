@@ -3,7 +3,7 @@ layout: post
 author: BRO
 title: "Stuffy - BraekerCTF"
 date: 2024-06-24
-categories: CTF
+categories: [CTF, Web]
 background_image: assets/stuffy.jpg
 title_color: "#ffffff"
 ---

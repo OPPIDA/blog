@@ -3,7 +3,7 @@ layout: post
 author: ABE
 title: "Ronin - BuckeyeCTF"
 date: 2022-11-29
-categories: CTF
+categories: [CTF, Pwn]
 background_image: assets/ronin.jpg
 title_color: "#ffffff"
 ---
@@ -12,9 +12,9 @@ Ce challenge est une exploitation de binaire. L'objectif est de détourner
 le flux d'exécution du programme pour obtenir un shell sur la machine distante et lire le flag.
 
 ## Details
-- Catégorie: pwn
-- Points: 271
-- Résolutions: 54
+- Catégorie : pwn
+- Points : 271
+- Résolutions : 54
 
 ### Description
 A weary samurai makes his way home.

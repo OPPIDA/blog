@@ -3,7 +3,7 @@ layout: post
 author: [PLM]
 title: "CTF - Hardware"
 date: 2024-07-17
-categories: CTF
+categories: [CTF, Hardware]
 background_image: assets/Tridroid-Banner.jpg
 title_color: "#ffffff"
 ---

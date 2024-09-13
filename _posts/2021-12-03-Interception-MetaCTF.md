@@ -3,7 +3,7 @@ layout: post
 author: [FPI, ABE]
 title: "Interception - MetaCTF 2021"
 date: 2021-12-03
-categories: CTF
+categories: [CTF, Misc]
 background_image: assets/Tridroid-Banner.jpg
 title_color: "#ffffff"
 ---
@@ -14,7 +14,7 @@ Dans ce challenge, l'objectif est de réaliser une attaque de type Man In The Mi
 
 ## Détails
 
-- Catégorie : other
+- Catégorie : misc
 - Points : 100
 - Résolutions : 200
 

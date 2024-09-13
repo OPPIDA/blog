@@ -3,7 +3,7 @@ layout: post
 author: FPI
 title: "Surface - FCSC 2022"
 date: 2022-05-17
-categories: CTF
+categories: [CTF, Crypto]
 background_image: assets/zoneindus.jpg
 title_color: "#ffffff"
 ---
@@ -13,7 +13,7 @@ Dans ce challenge, nous devons résoudre le problème des nombres congruents pou
 
 ## Détails
 
-- Catégorie : Crypto
+- Catégorie : crypto
 - Points : 477
 - Résolutions : 10
 
