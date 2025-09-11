@@ -27,7 +27,7 @@ Le but de cet article est de décortiquer les mécanismes de détection de l'int
 
 ### Introduction
 
-Android étant un système fermé, il ne met pas l’user root à disposition de l'utilisateur. En conséquence, une grande partie du système est inaccessible. Pour pallier ce problème, la communauté a créé de nombreux utilitaires permettant de "rooter" un téléphone. Ces logiciels modifient Android afin de donner accès à l’user root. Le plus connu et le plus utilisé d’entre eux est Magisk.
+Bien qu’Android soit un système ouvert, il ne donne pas à l’utilisateur un accès root par défaut. En conséquence, une grande partie du système est inaccessible. Pour pallier ce problème, la communauté a créé de nombreux utilitaires permettant de "rooter" un téléphone. Ces logiciels modifient Android afin de donner accès à l’user root. Le plus connu et le plus utilisé d’entre eux est Magisk.
 L'accès root est utile dans de nombreux cas il permet de customiser le système en profondeur, et dans notre cas il est indispensable pour correctement évaluer une application.
 
 ### Fonctionnement
