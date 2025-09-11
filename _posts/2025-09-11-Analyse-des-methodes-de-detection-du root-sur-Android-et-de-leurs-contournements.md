@@ -147,7 +147,7 @@ Trickystore ne fournit pas les clés leaks. Plusieurs moyens plus ou moins offic
 Un dernier effort est nécessaire pour contourner DexGuard, le principal problème étant l’impossibilité d’identifier précisément ce qui provoquait la détection.
 L'application [Native Detector](https://github.com/reveny/Android-Native-Root-Detector) va rechercher tous les problèmes dans l'environnement, il a été très utile pour bypasser Dexguard. 
 
-<img src="assets/posts/2025-09-11-Magisk-Root-Android/Native-Detector.jpg" alt="Native-Detector" height="150" />
+<img src="assets/posts/2025-09-11-Magisk-Root-Android/Native-Detector.jpg" alt="Native-Detector" height="70" />
 
 
 Deux soucis ont été remontés par l'application, le premier était qu'il arrivait à détecter une injection dans Zygote. Une simple mise à jour de Zygisk Next a permis de résoudre le souci. 
