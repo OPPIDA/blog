@@ -45,7 +45,7 @@ Pour comprendre comment Zygisk fonctionne, il est nécessaire de rappeler commen
 Toutes les applications Android fonctionnent dans des machines virtuelles, originellement appelées Dalvik. Il s'agit de VM java retravaillées afin qu'elles soient adaptées au système Android. Depuis la version 5 d'Android, Dalvik a été remplacée par Android Runtime plus couramment appelé ART. 
 Dans un but d'optimisation, Android va créer une VM ART lors du démarrage pour chaque nouvelle application un fork de cette VM va être créé. 
 C'est le processus Zygote qui va s'occuper de cette tâche, il va démarrer la VM mère et se mettre en écoute. Lors de la création d'un nouveau processus, il va s'occuper de réaliser le fork et de fournir la VM mère au processus.
-![zygote](assets/posts/2025-09-11-Magisk-Root-Android/zygote_schema.png)
+![zygote](assets/posts/2025-09-11-Magisk-Root-Android/zygote-schema.png)
 Comme son nom peut le laisser penser, Zygisk vient de Zygote + Magisk. Ce composant de Magisk va permettre d'automatiser l'injection de code directement dans Zygote. 
 De plus Magisk, offre la possibilité aux utilisateurs d'installer des modules qui vont utiliser cette fonctionnalité.
 Pour réaliser cela, Magisk va remplacer le binaire Zygote par son propre exécutable. Il va ensuite configurer des variables d'environnement et notamment **LDPRELOAD** afin d'exécuter une librairie "loader" dans le processus de Zygote. Une fois chargée, cette librairie expose un point d’entrée
@@ -149,7 +149,7 @@ L'application [Native Detector](https://github.com/reveny/Android-Native-Root-De
 
 
 <p align="center">
-![detector](assets/posts/2025-09-11-Magisk-Root-Android/Native_Detector.jpg)
+![detector](assets/posts/2025-09-11-Magisk-Root-Android/Native-Detector.jpg)
 </p>
 
 Deux soucis ont été remontés par l'application, le premier était qu'il arrivait à détecter une injection dans Zygote. Une simple mise à jour de Zygisk Next a permis de résoudre le souci. 
