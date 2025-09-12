@@ -101,13 +101,13 @@ Lors de notre évaluation, même avec les trois niveaux d’intégrité validés
 
 Maintenant que le fonctionnement de ces protections est compris, nous allons étudier comment elles sont contournées. La communauté Android étant très active, une multitude de modules permettant de les bypasser sont disponibles. Dans cette partie, nous verrons comment ils permettent de contourner la majorité des sécurités présentes sur Android.
 
-1. Zygisk Next
+### Zygisk Next
 [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext) est un module remplaçant le module Zygisk nativement intégré dans Magisk. Bien que parfaitement fonctionnel, Zygisk laisse des traces qui sont relativement faciles à détecter.
 C'est en partie pour cela que Zygisk Next a été créée.
 Ne pouvant pas s’injecter lors de la phase de boot comme Zygisk, Zygisk Next s’injecte dans le processus Zygote déjà en cours d’exécution.
 N'étant pas open source on ne connaît pas la méthode dont il s'injecte.
 
-2. Shamiko et Zygisk Assistant
+### Shamiko et Zygisk Assistant
 Dans la communauté du root, deux modules reviennent principalement quand l'on souhaite cacher les traces du root. 
 Le premier et sûrement le plus connu est [Shamiko](https://github.com/LSPosed/LSPosed.github.io/releases). Il est développé par la même équipe que le célèbre framework [LSPosed](https://github.com/LSPosed/LSPosed). 
 Le second est [Zygisk Assistant](https://github.com/snake-4/Zygisk-Assistant), il est légèrement moins réputé, mais a l'avantage d'être totalement open source contrairement à Shamiko.
@@ -117,7 +117,7 @@ En s'injectant dans le processus de l'application, ils vont être capable d'inte
 Ils modifient les logs et les contextes de SELinux pour effacer les traces de Magisk.
 Ils nettoient également en profondeur les traces résiduelles des montages de Magisk. Par exemple, ils analysent le fichier _/proc/self/mounts_ afin de s’assurer qu’aucune trace de Magisk n’est présente.
 
-3. Play integrity fork et Trickystore 
+### Play integrity fork et Trickystore 
 Ces deux modules vont servir à modifier le verdict du play integrity, comme cité précédemment le play integrity comporte trois niveaux d'intégrité, le basic, le device et le strong.
 
 [Play integrity fork](https://github.com/osm0sis/PlayIntegrityFork) va agir uniquement sur les deux premiers niveaux.
@@ -143,7 +143,7 @@ sequenceDiagram
 Bien évidemment en contrepartie, Google va régulièrement bannir toutes les clés leaks rendant impossible la validation du strong_integrity jusqu’au prochain leak.
 Trickystore ne fournit pas les clés leaks. Plusieurs moyens plus ou moins officiels permettent de récupérer des clés leaks, ces moyens ne seront bien évidement pas détaillés ici.
 
-4. Contournement de Dexguard
+### Contournement de Dexguard
 Un dernier effort est nécessaire pour contourner DexGuard, le principal problème étant l’impossibilité d’identifier précisément ce qui provoquait la détection.
 L'application [Native Detector](https://github.com/reveny/Android-Native-Root-Detector) va rechercher tous les problèmes dans l'environnement, il a été très utile pour bypasser Dexguard. 
 
