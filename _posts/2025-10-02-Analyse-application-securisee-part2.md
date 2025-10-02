@@ -60,7 +60,7 @@ if (ObjC.available) {
 
 Cependant, lors de son exécution, **Frida** crash avec le message d'erreur suivant.
 
-![attach-appli-integ](assets/posts/rasp-ios/3.png)
+![attach-appli-integ](assets/posts/rasp-ios/3.PNG)
 
 <div style="text-align: center;">Message d'erreur affiché par Frida</div>
 
@@ -164,6 +164,7 @@ L’intégralité du tweak développé dans le cadre de cet article est disponib
 
 
 Dans la prochaine partie, nous verrons comment approfondir encore davantage l’analyse de notre application cible en allant au-delà du simple hooking.
+
 
 
 
