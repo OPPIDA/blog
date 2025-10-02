@@ -18,7 +18,7 @@ Dans la première partie, nous avons été confrontés à un premier mécanisme 
 
 Lors de l'exécution de l'application sur certains de nos téléphones jailbreak, une erreur apparait. 
 
-![image-20250513100846263](C:\Users\Nicolas RODRIGUES\AppData\Roaming\Typora\typora-user-images\image-20250513100846263.png)
+![image-20250513100846263](assets/posts/rasp-ios/1.png)
 
 <div style="text-align: center;">Erreur affiché sur l'application</div>
 
@@ -26,7 +26,7 @@ Après quelques recherches, on remarque que l'erreur provient du fait que nos iP
 
 Pour identifier si un téléphone possède un code de verrouillage, Apple dispose d'un framework nommé **[LocalAuthentication](https://developer.apple.com/documentation/localauthentication)**. 
 
-![image-20250513104745066](C:\Users\Nicolas RODRIGUES\AppData\Roaming\Typora\typora-user-images\image-20250513104745066.png)
+![image-20250513104745066](assets/posts/rasp-ios/2.png)
 
 <div style="text-align: center;">Vérification de la présence d'un code par l'application</div>
 
@@ -60,7 +60,7 @@ if (ObjC.available) {
 
 Cependant, lors de son exécution, **Frida** crash avec le message d'erreur suivant.
 
-![attach-appli-integ](C:\Users\Nicolas RODRIGUES\Documents\PRESTATION\SV_2\Tests\POSTEXPLOIT\Frida\attach-appli-integ.PNG)
+![attach-appli-integ](assets/posts/rasp-ios/3.png)
 
 <div style="text-align: center;">Message d'erreur affiché par Frida</div>
 
@@ -80,7 +80,7 @@ Au démarrage du système, un daemon d'injection fourni par **ElleKit** est acti
 
 Lorsqu'un tweak est installé, il est généralement compilé sous forme de bibliothèque dynamique (`.dylib`). Il dispose également d'un fichier `.plist`  qui précise les cibles sur lesquelles il s'injecte, comme SpringBoard, UIKits, ou d'autres applications.  **ElleKit** injecte alors cette bibliothèque dans les processus cibles en se référant au fichier `.plist`.
 
-![image-20250513172909780](C:\Users\Nicolas RODRIGUES\AppData\Roaming\Typora\typora-user-images\image-20250513172909780.png)
+![image-20250513172909780](assets/posts/rasp-ios/4.png)
 
 <div style="text-align: center;">Fonctionnement de l'injection de tweak</div>
 
@@ -96,7 +96,7 @@ Nous avons alors décidé de développer notre propre tweak afin d'intercepter e
 
 **Theos** est un environnement de développement open-source utilisé principalement pour créer des **tweaks** (modifications système) sur les appareils iOS jailbreakés. Il permet de compiler, structurer et déployer du code Objective-C / Swift en `.dylib`, injectables dans le système ou dans des apps via des frameworks comme ElleKit ou libhooker. Il fonctionne autant sur macOS que sur Linux. 
 
-![image-20250513175759300](C:\Users\Nicolas RODRIGUES\AppData\Roaming\Typora\typora-user-images\image-20250513175759300.png)
+![image-20250513175759300](assets/posts/rasp-ios/5.png)
 
 <div style="text-align: center;">Choix divers de création de programme iOS via Theos</div>
 
@@ -150,7 +150,7 @@ Enfin, pour cet exemple, nous avons décidé d'appliquer ce tweak à toutes les 
 
 Une fois compilé, le tweak peut être installé sur notre téléphone jailbreak. 
 
-![tweak](img-test\100APPLE\tweak.png)
+![tweak](assets/posts/rasp-ios/6.png)
 
 <div style="text-align: center;">Tweak installé dans Sileo</div>
 
@@ -161,5 +161,6 @@ Ainsi, on peut constater que notre application se lance correctement depuis un t
 Dans cette section, nous avons exploré le fonctionnement et le développement de tweaks permettant d’effectuer du hooking sur des fonctions d’une application cible. Cette approche constitue une alternative pertinente pour instrumenter des fonctions, en raison de sa furtivité et de son efficacité. En effet, nous avons constaté qu’elle permet de contourner certains mécanismes de détection mis en place pour contrer l’analyse dynamique, contrairement à d’autres techniques plus classiques.
 
 L’intégralité du tweak développé dans le cadre de cet article est disponible sur le [GitHub d’Oppida](https://github.com/oppida), afin de faciliter sa reproduction et son adaptation.
+
 
 Dans la prochaine partie, nous verrons comment approfondir encore davantage l’analyse de notre application cible en allant au-delà du simple hooking.
