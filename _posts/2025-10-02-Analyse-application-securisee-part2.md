@@ -1,7 +1,7 @@
 ---
 layout: post
 author: [NRO]
-title: "Analyse-application-mobile-securisee-2"
+title: "Analyse d'une application sécurisée par un RASP [PART.2]"
 date: 2025-10-02
 categories: [Articles, Mobile, Sécurité]
 image: assets/posts/rasp-ios/banner.png 
@@ -164,6 +164,7 @@ L’intégralité du tweak développé dans le cadre de cet article est disponib
 
 
 Dans la prochaine partie, nous verrons comment approfondir encore davantage l’analyse de notre application cible en allant au-delà du simple hooking.
+
 
 
 
