@@ -132,7 +132,7 @@ Lors de l'interception de l'utilisation de `LAContext`, on force la méthode `ca
 
 Pour que le tweak puisse s'exécuter correctement dans nos environnements, nous spécifions dans le Makefile les différentes caractéristiques liées à notre configuration, notamment qu'il s'agit d'un tweak rootless.
 
-Enfin, pour cet exemple, nous avons décidé d'appliquer ce tweak à toutes les applications. C'est pourquoi nous avons choisi de cibler [UIKit](http://en.wikipedia.org/wiki/UIKit) dans notre fichier `.plist`. En effet il représente un framework de développement utilisés par presque toutes les applications. En le ciblant, notre tweak s'applique à pratiquement toutes les applications d'un coup.
+Enfin, pour cet exemple, nous avons décidé d'appliquer ce tweak à toutes les applications. C'est pourquoi nous avons choisi de cibler [UIKit](https://en.wikipedia.org/wiki/UIKit) dans notre fichier `.plist`. En effet il représente un framework de développement utilisés par presque toutes les applications. En le ciblant, notre tweak s'applique à pratiquement toutes les applications d'un coup.
 
 ```xml
 <dict>
@@ -164,6 +164,7 @@ L’intégralité du tweak développé dans le cadre de cet article est disponib
 
 
 Dans la prochaine partie, nous verrons comment approfondir encore davantage l’analyse de notre application cible en allant au-delà du simple hooking.
+
 
 
 
