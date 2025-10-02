@@ -1,6 +1,6 @@
 ---
 layout: post
-author: [Nicolas RODRIGUES]
+author: [NRO]
 title: "Analyse-application-mobile-securisee-2"
 date: 2025-10-03
 categories: [Articles, Mobile, Sécurité]
@@ -164,5 +164,6 @@ L’intégralité du tweak développé dans le cadre de cet article est disponib
 
 
 Dans la prochaine partie, nous verrons comment approfondir encore davantage l’analyse de notre application cible en allant au-delà du simple hooking.
+
 
 
